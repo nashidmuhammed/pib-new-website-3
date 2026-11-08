@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsroom — Press Information Bureau, Government of India</title>
+<meta name="description" content="Official editorial newsroom and gazette register of the Press Information Bureau, Government of India. Authentic releases, cabinet decisions, statements, and verified fact-checks.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        serif: ['"Instrument Serif"', '"Source Serif 4"', 'Georgia', 'serif'],
+        headline: ['"Source Serif 4"', 'Georgia', 'serif'],
+        sans: ['"Instrument Sans"', 'Inter', '"Noto Sans Devanagari"', 'system-ui', 'sans-serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+      },
+      colors: {
+        ink: {
+          DEFAULT: '#111317',
+          900: '#151A30', // White House Executive Navy
+          800: '#1E2337',
+          700: '#2A3047',
+          600: '#3D445C',
+          500: '#5A627E'
+        },
+        graphite: '#2A2D34',
+        mute: '#666A73',
+        line: {
+          DEFAULT: '#E6E4DE',
+          light: '#F0EFEA',
+          dark: '#D0CDC4'
+        },
+        paper: {
+          DEFAULT: '#F7F6F2',
+          warm: '#FAF9F5',
+          cream: '#F4F2EC'
+        },
+        executive: {
+          navy: '#151A30',
+          blue: '#1F2E7A',
+          soft: '#EAEFF8',
+          accent: '#1B3B6F'
+        },
+        verdict: {
+          DEFAULT: '#9B2226',
+          bg: '#FDF2F2',
+          border: '#F87171'
+        }
+      },
+      keyframes: {
+        marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
+        drift: { '0%': { transform: 'scale(1.06)' }, '100%': { transform: 'scale(1)' } }
+      },
+      animation: {
+        marquee: 'marquee 65s linear infinite',
+        drift: 'drift 8s cubic-bezier(.2,.7,.2,1) forwards'
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  
+  /* White House style animated text underlines */
+  .ulink {
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+    transition: background-size 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .ulink:hover, .group:hover .ulink {
+    background-size: 100% 1px;
+  }
+  
+  /* Horizontal hairline dividers */
+  .hairline-b { border-bottom: 1px solid #E6E4DE; }
+  .hairline-t { border-top: 1px solid #E6E4DE; }
+
+  /* Vignette edges for marquee */
+  .fade-edges {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  }
+  .no-bar::-webkit-scrollbar { display: none; }
+  .no-bar { scrollbar-width: none; }
+
+  /* Accessible outline focus */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+    outline: 2px solid #151A30 !important;
+    outline-offset: 2px !important;
+  }
+  input:focus { outline: none !important; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1); }
+    .reveal.in { opacity: 1; transform: none; }
+    .split .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.08em; }
+    .split .w > span { display: inline-block; transform: translateY(105%); transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1); }
+    .split.in .w > span { transform: none; }
+    .wipe { clip-path: inset(0 100% 0 0); transition: clip-path 1.2s cubic-bezier(0.7, 0, 0.2, 1); }
+    .wipe.in { clip-path: inset(0 0 0 0); }
+    .dispatch-item { transition: opacity 0.3s ease, transform 0.3s ease; }
+    .dispatch-item.out { opacity: 0; transform: translateY(6px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee, .animate-drift, .animate-ping { animation: none !important; }
+    .reveal, .wipe { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+  }
+
+  /* High Contrast Mode */
+  .high-contrast {
+    filter: contrast(125%);
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  .high-contrast .bg-paper, .high-contrast .bg-paper-warm { background-color: #EEEEEE !important; }
+  .high-contrast .bg-ink-900 { background-color: #000000 !important; }
+</style>
+</head>
+<body class="bg-white font-sans text-ink selection:bg-executive-soft selection:text-ink-900 min-h-screen flex flex-col antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-ink-900 focus:text-white focus:px-4 focus:py-2 focus:rounded-sm shadow-xl text-xs uppercase tracking-widest font-semibold">Skip to content</a>
+
+<!-- Top Reading Progress Indicator -->
+<div id="progress" class="fixed top-0 left-0 h-[3px] w-full origin-left scale-x-0 bg-ink-900 z-[80] transition-transform duration-75" aria-hidden="true"></div>
+
+<!-- Top Concept Switcher Banner -->
+<!-- <div id="concept-label" class="bg-paper border-b border-line text-[11px] text-graphite">
+  <div class="max-w-[1360px] mx-auto px-5 sm:px-10 py-1.5 flex flex-wrap items-center justify-between gap-3">
+    <div class="flex items-center gap-2">
+      <span class="inline-flex items-center gap-1 font-semibold text-ink-900 px-2 py-0.5 rounded bg-black/5 text-[10px] tracking-wider uppercase">Concept B</span>
+      <span>Executive Editorial Newsroom · White House Architectural Design Pattern</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="conceptA-DBIM.html" class="inline-flex items-center gap-1.5 text-executive-blue hover:text-ink-900 font-medium underline underline-offset-2">
+        <i class="fa-solid fa-arrow-left text-[9px]"></i> Switch to Concept A (DBIM 3.0 Portal)
+      </a>
+      <span class="text-line hidden sm:inline" aria-hidden="true">|</span>
+      <span class="text-mute hidden sm:inline">Reference: whitehouse.gov/news &amp; UX Pilot v2</span>
+    </div>
+  </div>
+</div> -->
+
+<!-- Header: hides on scroll down, returns on scroll up -->
+<header id="header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-line transition-transform duration-500 ease-out">
+  <div class="max-w-[1360px] mx-auto px-5 sm:px-10 h-[74px] flex items-center justify-between gap-6">
+    
+    <!-- Emblem & Masthead Lockup -->
+    <a href="#" class="flex items-center gap-3 shrink-0 group focus:outline-none" aria-label="Press Information Bureau, Government of India — Home">
+      <img src="PIB Delhi, Press Information Bureau_files/emblem-of-india_-0eu.png" alt="State Emblem of India" class="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+      <div class="leading-none border-l border-line pl-3">
+        <div class="font-headline text-[19px] sm:text-[21px] tracking-[-0.01em] text-ink-900 font-medium">Press Information Bureau</div>
+        <div class="mt-1 text-[10px] uppercase tracking-[0.22em] text-mute flex items-center gap-1.5 font-sans">
+          <span>Government of India</span>
+          <span class="text-line">·</span>
+          <span class="font-normal font-sans text-[9px] tracking-normal">भारत सरकार</span>
+        </div>
+      </div>
+      <img src="PIB Delhi, Press Information Bureau_files/pib-logo_-0eu.png" alt="PIB Official Insignia" class="h-8 w-auto object-contain ml-2 hidden sm:block opacity-90">
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav aria-label="Main navigation" class="hidden xl:block">
+      <ul id="nav-desktop" class="flex items-center gap-7 text-[13px] tracking-wide text-graphite uppercase font-medium">
+        <li><a href="#topper" aria-current="page" class="text-ink-900 relative after:absolute after:left-0 after:-bottom-1.5 after:h-[2px] after:w-full after:bg-ink-900">Newsroom</a></li>
+        <li><a href="#latest-dispatches" class="ulink hover:text-ink-900 transition-colors">Dispatches</a></li>
+        <li><a href="#briefings-statements" class="ulink hover:text-ink-900 transition-colors">Briefings</a></li>
+        <li><a href="#speeches" class="ulink hover:text-ink-900 transition-colors">Remarks</a></li>
+        <li><a href="#ministry-directory" class="ulink hover:text-ink-900 transition-colors">Ministries</a></li>
+        <li><a href="#media-room" class="ulink hover:text-ink-900 transition-colors">Media</a></li>
+        <li><a href="#fact-check" class="ulink hover:text-ink-900 transition-colors">Fact Check</a></li>
+        <li><a href="#publications" class="ulink hover:text-ink-900 transition-colors">Gazette</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-2.5 text-[13px] text-graphite shrink-0">
+      
+      <!-- Quick Search Button -->
+      <button id="btn-open-search" class="inline-flex items-center gap-2 h-9 px-3.5 rounded-full border border-line bg-paper-warm hover:bg-white hover:border-ink-900 text-graphite transition-all group text-xs" aria-label="Open search dialog">
+        <i class="fa-solid fa-magnifying-glass text-[11.5px] text-mute group-hover:text-ink-900"></i>
+        <span class="hidden md:inline font-sans text-graphite">Search Dispatches</span>
+        <kbd class="hidden md:inline text-[9.5px] px-1 py-0.5 rounded bg-white border border-line text-mute font-mono">/</kbd>
+      </button>
+
+      <!-- Language Switcher -->
+      <div class="hidden sm:flex items-center h-9 px-2 text-xs font-medium" role="group" aria-label="Language selection">
+        <button id="lang-en" aria-pressed="true" class="px-1 text-ink-900 font-bold">EN</button>
+        <span class="text-line px-0.5">/</span>
+        <button id="lang-hi" lang="hi" aria-pressed="false" class="px-1 text-mute hover:text-ink-900 transition-colors">हिंदी</button>
+      </div>
+
+      <!-- Accessibility Settings Trigger -->
+      <button id="btn-toggle-a11y" class="w-9 h-9 rounded-full border border-line flex items-center justify-center hover:bg-paper-warm hover:text-ink-900 transition-colors" aria-label="Toggle accessibility tools" title="Accessibility preferences">
+        <i class="fa-solid fa-universal-access text-[14px]"></i>
+      </button>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="btn-mobile-menu" class="xl:hidden w-9 h-9 rounded-full border border-line flex items-center justify-center hover:bg-paper-warm hover:text-ink-900 transition-colors" aria-label="Toggle mobile navigation">
+        <i class="fa-solid fa-bars text-[14px]"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Compact Horizontal Scrolling Navigation for Tablet & Mobile -->
+  <nav aria-label="Main navigation (mobile)" class="xl:hidden border-t border-line bg-white">
+    <ul class="no-bar max-w-[1360px] mx-auto px-5 sm:px-10 flex gap-6 overflow-x-auto whitespace-nowrap text-[12.5px] uppercase tracking-wider text-graphite font-medium">
+      <li><a href="#topper" aria-current="page" class="block py-2.5 text-ink-900 border-b-2 border-ink-900 font-bold">Newsroom</a></li>
+      <li><a href="#latest-dispatches" class="block py-2.5 hover:text-ink-900 transition-colors">Dispatches</a></li>
+      <li><a href="#briefings-statements" class="block py-2.5 hover:text-ink-900 transition-colors">Briefings</a></li>
+      <li><a href="#speeches" class="block py-2.5 hover:text-ink-900 transition-colors">Remarks</a></li>
+      <li><a href="#ministry-directory" class="block py-2.5 hover:text-ink-900 transition-colors">Ministries</a></li>
+      <li><a href="#media-room" class="block py-2.5 hover:text-ink-900 transition-colors">Media</a></li>
+      <li><a href="#fact-check" class="block py-2.5 hover:text-ink-900 transition-colors">Fact Check</a></li>
+      <li><a href="#publications" class="block py-2.5 hover:text-ink-900 transition-colors">Gazette</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Accessibility Drawer -->
+<div id="a11y-panel" class="hidden border-b border-line bg-paper-cream py-3 px-5 sm:px-10 text-xs text-graphite">
+  <div class="max-w-[1360px] mx-auto flex flex-wrap items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <span class="font-semibold text-ink-900"><i class="fa-solid fa-font mr-1"></i> Text Scaling:</span>
+      <div class="inline-flex rounded border border-line bg-white overflow-hidden" role="group">
+        <button id="font-dec" class="px-3 py-1 hover:bg-paper border-r border-line text-xs" title="Decrease font size">A-</button>
+        <button id="font-reset" class="px-3 py-1 hover:bg-paper border-r border-line font-bold text-xs" title="Reset font size">A</button>
+        <button id="font-inc" class="px-3 py-1 hover:bg-paper text-xs" title="Increase font size">A+</button>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="font-semibold text-ink-900"><i class="fa-solid fa-circle-half-stroke mr-1"></i> Visual Contrast:</span>
+      <button id="btn-toggle-contrast" class="px-3 py-1 rounded border border-line bg-white hover:bg-paper font-medium transition-colors">High Contrast Mode</button>
+    </div>
+    <button id="btn-close-a11y" class="text-mute hover:text-ink-900 text-sm ml-auto" aria-label="Close accessibility options">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+</div>
+
+<main id="main" class="flex-grow">
+
+  <!-- THE WHITE HOUSE TOPPER MASTHEAD SECTION -->
+  <section id="topper" class="border-b border-line bg-paper-warm pt-14 pb-8" aria-labelledby="topper-title">
+    <div class="max-w-[1360px] mx-auto px-5 sm:px-10">
+      
+      <!-- Dateline & Flag Notice -->
+      <div class="reveal flex flex-wrap items-center justify-between gap-3 text-[11.5px] uppercase tracking-[0.18em] text-mute mb-5 pb-3 border-b border-line/60">
+        <span class="flex items-center gap-2 text-ink-800 font-medium">
+          <svg class="w-3.5 h-2.5 rounded-[1px] shadow-sm inline-block" viewBox="0 0 450 300" aria-hidden="true">
+            <rect width="450" height="100" fill="#FF9933"/>
+            <rect y="100" width="450" height="100" fill="#FFFFFF"/>
+            <rect y="200" width="450" height="100" fill="#138808"/>
+            <circle cx="225" cy="150" r="35" fill="#000080"/>
+          </svg>
+          Thursday, 13 August 2026 · New Delhi
+        </span>
+        <span class="font-mono text-[10.5px]">Official Register of the Government of India</span>
+      </div>
+
+      <!-- Masthead Headline & Executive Deck -->
+      <div class="reveal flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-10">
+        <div class="max-w-[780px]">
+          <h1 id="topper-title" class="font-serif font-normal text-[52px] sm:text-[72px] lg:text-[84px] leading-[0.95] tracking-[-0.03em] text-ink-900">
+            Newsroom
+          </h1>
+          <p class="mt-4 text-[17px] sm:text-[19px] leading-[1.6] text-graphite font-headline font-light">
+            The official transcripts, cabinet resolutions, executive orders, gazette proclamations, and verified dispatches issued by the Press Information Bureau.
+          </p>
+        </div>
+
+        <!-- Integrated Topper Search Input (White House Style) -->
+        <div class="w-full lg:w-[380px] shrink-0">
+          <form role="search" onsubmit="event.preventDefault();" class="relative">
+            <label for="topper-search-input" class="sr-only">Search dispatches and records</label>
+            <div class="flex items-center h-12 bg-white border border-line focus-within:border-ink-900 rounded-sm px-4 shadow-sm transition-all">
+              <i class="fa-solid fa-magnifying-glass text-[13px] text-mute mr-3"></i>
+              <input id="topper-search-input" type="search" placeholder="Search by keyword, scheme, or minister..." class="w-full bg-transparent text-[14px] text-ink-900 placeholder:text-mute focus:outline-none font-sans">
+              <span id="topper-search-count" class="text-[11px] font-mono text-mute shrink-0 pl-2">ALL</span>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Category Filter Navigation Bar (White House Topper Navigation Pattern) -->
+      <div class="reveal border-t border-line pt-4">
+        <nav aria-label="Filter news by category">
+          <ul id="category-filters" class="no-bar flex items-center gap-1 sm:gap-2 overflow-x-auto whitespace-nowrap text-[12.5px] uppercase tracking-[0.14em] font-semibold text-graphite">
+            <li>
+              <button class="cat-pill px-4 py-2 rounded-sm bg-ink-900 text-white transition-all duration-200" data-category="all" aria-pressed="true">
+                All (12)
+              </button>
+            </li>
+            <li>
+              <button class="cat-pill px-4 py-2 rounded-sm text-graphite hover:text-ink-900 hover:bg-white transition-all duration-200" data-category="release" aria-pressed="false">
+                Releases
+              </button>
+            </li>
+            <li>
+              <button class="cat-pill px-4 py-2 rounded-sm text-graphite hover:text-ink-900 hover:bg-white transition-all duration-200" data-category="briefing" aria-pressed="false">
+                Briefings &amp; Statements
+              </button>
+            </li>
+            <li>
+              <button class="cat-pill px-4 py-2 rounded-sm text-graphite hover:text-ink-900 hover:bg-white transition-all duration-200" data-category="cabinet" aria-pressed="false">
+                Cabinet Actions
+              </button>
+            </li>
+            <li>
+              <button class="cat-pill px-4 py-2 rounded-sm text-graphite hover:text-ink-900 hover:bg-white transition-all duration-200" data-category="speech" aria-pressed="false">
+                Remarks &amp; Speeches
+              </button>
+            </li>
+            <li>
+              <button class="cat-pill px-4 py-2 rounded-sm text-graphite hover:text-ink-900 hover:bg-white transition-all duration-200" data-category="factcheck" aria-pressed="false">
+                Fact Checks
+              </button>
+            </li>
+            <li>
+              <button class="cat-pill px-4 py-2 rounded-sm text-graphite hover:text-ink-900 hover:bg-white transition-all duration-200" data-category="publication" aria-pressed="false">
+                Gazette &amp; Reports
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 1: ASYMMETRIC FEATURED LEAD & LIVE VERDICT FEED -->
+  <section id="lead" class="max-w-[1360px] mx-auto px-5 sm:px-10 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+      
+      <!-- Lead Broadsheet Story (Col 8) -->
+      <article id="lead-story" class="lg:col-span-8 flex flex-col justify-between">
+        <div>
+          <div class="reveal flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.18em]">
+            <span class="text-executive-blue font-bold">Featured Cabinet Approval</span>
+            <span class="w-6 h-px bg-line"></span>
+            <span class="text-mute">Prime Minister's Office · Ministry of New &amp; Renewable Energy</span>
+          </div>
+
+          <h2 class="split mt-4 font-serif font-normal text-[36px] sm:text-[48px] lg:text-[58px] leading-[1.04] tracking-[-0.03em] text-ink-900">
+            Cabinet approves PM Surya Ghar: Muft Bijli Yojana with total outlay of ₹75,021 Crore for installing rooftop solar in 1 Crore households
+          </h2>
+
+          <p class="reveal mt-6 text-[17px] sm:text-[18px] leading-[1.65] text-graphite font-headline font-light max-w-[64ch]">
+            Chaired by Prime Minister Narendra Modi, the Union Cabinet has sanctioned direct financial assistance of up to ₹78,000 per household alongside collateral-free, low-interest loan products. Beneficiaries will save significantly on recurring utility expenditures while exporting surplus electricity to state distribution utilities.
+          </p>
+
+          <div class="reveal mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-[12px] uppercase tracking-[0.14em] text-mute py-3 border-y border-line font-medium">
+            <span><i class="fa-regular fa-clock mr-1 text-ink-900"></i> 13 August 2026 · 18:45 IST</span>
+            <span><i class="fa-solid fa-location-dot mr-1 text-ink-900"></i> PIB New Delhi</span>
+            <button onclick="openReleaseModal('PM Surya Ghar: Muft Bijli Yojana', 'Cabinet Approval', 'Ministry of New & Renewable Energy')" class="group inline-flex items-center gap-1.5 text-ink-900 font-bold ml-auto cursor-pointer">
+              <span class="ulink">Read Official Cabinet Gazette</span>
+              <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Official Photograph with Wipe Entry & Drift Effect -->
+        <figure class="mt-8">
+          <div id="hero-img" class="wipe overflow-hidden rounded-sm border border-line bg-paper">
+            <div class="aspect-[16/9] relative overflow-hidden group">
+              <img src="PIB Delhi, Press Information Bureau_files/I20250604306_-0eu.JPEG" 
+                   alt="Prime Minister Narendra Modi chairing the Union Cabinet meeting at South Block, New Delhi" 
+                   class="w-full h-full object-cover animate-drift transition-transform duration-700 group-hover:scale-[1.03]">
+            </div>
+          </div>
+          <figcaption class="reveal mt-3 text-[12px] text-mute flex items-center justify-between font-sans">
+            <span>Prime Minister Narendra Modi chairing the Union Cabinet meeting at South Block, New Delhi</span>
+            <span class="text-ink-800 font-mono text-[11px] font-semibold">Official Photo · PIB / Delhi</span>
+          </figcaption>
+        </figure>
+      </article>
+
+      <!-- Sidebar: Latest Official River (Col 4) -->
+      <aside id="latest-river" class="lg:col-span-4 lg:pl-10 lg:border-l lg:border-line flex flex-col justify-between" aria-labelledby="latest-river-title">
+        <div>
+          <div class="reveal flex items-center justify-between pb-4 border-b border-line">
+            <h3 id="latest-river-title" class="flex items-center gap-2.5 text-[11px] uppercase tracking-[0.18em] font-bold text-ink-900">
+              <span class="relative flex w-2 h-2">
+                <span class="absolute inset-0 rounded-full bg-verdict animate-ping opacity-60"></span>
+                <span class="relative w-2 h-2 rounded-full bg-verdict"></span>
+              </span>
+              Official Wire
+            </h3>
+            <span class="text-[10.5px] font-mono text-mute uppercase">Live Bulletin</span>
+          </div>
+
+          <!-- White House Style Compact Wire Stream -->
+          <ol class="divide-y divide-line">
+            
+            <li class="reveal group py-4">
+              <a href="#dispatch-detail" onclick="openReleaseModal('Cabinet Approves Bharat 6G Mission', 'Cabinet Action', 'Ministry of Communications')" class="block">
+                <div class="flex items-center justify-between text-[10.5px] uppercase tracking-[0.16em]">
+                  <span class="font-bold text-executive-blue">Cabinet Action</span>
+                  <time class="font-mono text-mute">18:30 IST</time>
+                </div>
+                <h4 class="mt-1.5 font-headline font-normal text-[17px] leading-[1.3] text-ink-900 group-hover:text-executive-blue transition-colors">
+                  <span class="ulink">Cabinet approves Bharat 6G Mission to accelerate domestic patents, standards, and advanced communications R&amp;D</span>
+                </h4>
+                <div class="mt-1 text-[12px] text-mute">Ministry of Communications</div>
+              </a>
+            </li>
+
+            <li class="reveal group py-4">
+              <a href="#dispatch-detail" onclick="openReleaseModal('National Quantum Mission Call for Hardware Proposals', 'Policy Directive', 'Ministry of Science & Technology')" class="block">
+                <div class="flex items-center justify-between text-[10.5px] uppercase tracking-[0.16em]">
+                  <span class="font-bold text-executive-blue">Policy Directive</span>
+                  <time class="font-mono text-mute">17:45 IST</time>
+                </div>
+                <h4 class="mt-1.5 font-headline font-normal text-[17px] leading-[1.3] text-ink-900 group-hover:text-executive-blue transition-colors">
+                  <span class="ulink">National Quantum Mission invites proposals for quantum computing hardware and secure cryptography testbeds</span>
+                </h4>
+                <div class="mt-1 text-[12px] text-mute">Ministry of Science &amp; Technology</div>
+              </a>
+            </li>
+
+            <li class="reveal group py-4">
+              <a href="#dispatch-detail" onclick="openReleaseModal('IIP Industrial Growth Registers 5.6%', 'Economic Data', 'MOSPI')" class="block">
+                <div class="flex items-center justify-between text-[10.5px] uppercase tracking-[0.16em]">
+                  <span class="font-bold text-executive-blue">Economic Data</span>
+                  <time class="font-mono text-mute">16:15 IST</time>
+                </div>
+                <h4 class="mt-1.5 font-headline font-normal text-[17px] leading-[1.3] text-ink-900 group-hover:text-executive-blue transition-colors">
+                  <span class="ulink">Index of Industrial Production (IIP) registers robust 5.6% growth across key infrastructure sectors</span>
+                </h4>
+                <div class="mt-1 text-[12px] text-mute">Ministry of Statistics &amp; Programme Implementation</div>
+              </a>
+            </li>
+
+            <li class="reveal group py-4">
+              <a href="#dispatch-detail" onclick="openReleaseModal('Direct Tax Collections Surge 18.2%', 'Revenue Report', 'Ministry of Finance')" class="block">
+                <div class="flex items-center justify-between text-[10.5px] uppercase tracking-[0.16em]">
+                  <span class="font-bold text-executive-blue">Revenue Report</span>
+                  <time class="font-mono text-mute">15:00 IST</time>
+                </div>
+                <h4 class="mt-1.5 font-headline font-normal text-[17px] leading-[1.3] text-ink-900 group-hover:text-executive-blue transition-colors">
+                  <span class="ulink">Gross Direct Tax collections expand 18.2% to ₹12.01 Lakh Crore, demonstrating domestic macroeconomic stability</span>
+                </h4>
+                <div class="mt-1 text-[12px] text-mute">Ministry of Finance</div>
+              </a>
+            </li>
+
+            <li class="reveal group py-4">
+              <a href="#dispatch-detail" onclick="openReleaseModal('Bilateral Naval Exercise VARUNA Concludes', 'Defence Communiqué', 'Ministry of Defence')" class="block">
+                <div class="flex items-center justify-between text-[10.5px] uppercase tracking-[0.16em]">
+                  <span class="font-bold text-executive-blue">Defence Communiqué</span>
+                  <time class="font-mono text-mute">13:20 IST</time>
+                </div>
+                <h4 class="mt-1.5 font-headline font-normal text-[17px] leading-[1.3] text-ink-900 group-hover:text-executive-blue transition-colors">
+                  <span class="ulink">Indian Navy and French Navy conclude 23rd edition of bilateral naval exercise 'VARUNA' in Western Seaboard</span>
+                </h4>
+                <div class="mt-1 text-[12px] text-mute">Ministry of Defence</div>
+              </a>
+            </li>
+
+          </ol>
+        </div>
+
+        <div class="reveal pt-4 border-t border-line mt-6 flex items-center justify-between text-[12px]">
+          <a href="#latest-dispatches" class="font-bold text-ink-900 inline-flex items-center gap-1 group">
+            <span class="ulink">Browse All Dispatches</span>
+            <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </a>
+          <span class="text-mute font-mono text-[11px]">Updated in Real-Time</span>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: THE WHITE HOUSE "DISPATCH RIVER" (MAIN CHRONOLOGICAL STREAM) -->
+  <section id="latest-dispatches" class="border-t border-line bg-paper py-20" aria-labelledby="river-heading">
+    <div class="max-w-[1360px] mx-auto px-5 sm:px-10">
+      
+      <!-- Section Header -->
+      <div class="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-line">
+        <div>
+          <div class="text-[11px] uppercase tracking-[0.2em] text-executive-blue font-bold">Chronological Stream</div>
+          <h2 id="river-heading" class="font-serif font-normal text-[38px] sm:text-[46px] leading-[1.05] tracking-[-0.02em] text-ink-900 mt-1">
+            Official Dispatches &amp; Proclamations
+          </h2>
+          <p class="mt-2 text-[15px] text-mute font-headline font-light">
+            Continuous gazette register indexed by issuing authority, date, and verified classification.
+          </p>
+        </div>
+        
+        <div class="text-[12px] font-mono text-mute">
+          Showing <span id="visible-count" class="font-bold text-ink-900">10</span> records
+        </div>
+      </div>
+
+      <!-- Hairline River Stream (White House wp-block-post pattern) -->
+      <div id="dispatch-container" class="divide-y divide-line">
+        
+        <!-- Entry 1: Briefing -->
+        <article class="dispatch-item reveal py-8 group" data-category="briefing">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+            <div class="md:col-span-3 text-[11px] uppercase tracking-[0.16em] text-mute">
+              <span class="font-bold text-executive-blue block">Briefing &amp; Statement</span>
+              <time class="font-mono text-ink-800 block mt-1">13 August 2026</time>
+              <span class="block mt-1 text-mute">Ministry of External Affairs</span>
+            </div>
+            <div class="md:col-span-9">
+              <h3 class="font-headline font-normal text-[22px] sm:text-[26px] leading-[1.25] text-ink-900 group-hover:text-executive-blue transition-colors">
+                <a href="#dispatch" onclick="openReleaseModal('Statement on Regional Consular Advisories', 'Briefing & Statement', 'Ministry of External Affairs')" class="ulink">
+                  Statement by the Official Spokesperson on updated consular security advisories and humanitarian assistance for Indian citizens abroad
+                </a>
+              </h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-graphite font-light max-w-[70ch]">
+                The Ministry of External Affairs has updated its travel advisory framework in coordination with overseas diplomatic missions to guarantee real-time registration and repatriation pathways.
+              </p>
+              <div class="mt-4 flex items-center gap-4 text-[12px] text-mute font-medium">
+                <span class="text-ink-800 font-mono">PIB New Delhi</span>
+                <span>·</span>
+                <span class="hover:text-ink-900 cursor-pointer">Official Transcript (PDF 340 KB)</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Entry 2: Speech / Remarks -->
+        <article class="dispatch-item reveal py-8 group" data-category="speech">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+            <div class="md:col-span-3 text-[11px] uppercase tracking-[0.16em] text-mute">
+              <span class="font-bold text-executive-blue block">Remarks &amp; Address</span>
+              <time class="font-mono text-ink-800 block mt-1">12 August 2026</time>
+              <span class="block mt-1 text-mute">Prime Minister's Office</span>
+            </div>
+            <div class="md:col-span-9">
+              <h3 class="font-headline font-normal text-[22px] sm:text-[26px] leading-[1.25] text-ink-900 group-hover:text-executive-blue transition-colors">
+                <a href="#dispatch" onclick="openReleaseModal('Address to Global Tech & Innovation Summit', 'Remarks & Address', 'Prime Minister's Office')" class="ulink">
+                  Prime Minister's Keynote Address at the International Conclave on Trusted Artificial Intelligence and Digital Public Infrastructure
+                </a>
+              </h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-graphite font-light max-w-[70ch]">
+                "India stands as the world's proving ground for scalable, democratic, and citizen-first digital architectures. What worked for payments and identity will power open innovation."
+              </p>
+              <div class="mt-4 flex items-center gap-4 text-[12px] text-mute font-medium">
+                <span class="text-ink-800 font-mono">Bharat Mandapam, New Delhi</span>
+                <span>·</span>
+                <span class="hover:text-ink-900 cursor-pointer">Video Recording [28:15]</span>
+                <span>·</span>
+                <span class="hover:text-ink-900 cursor-pointer">Verbatim English &amp; Hindi Texts</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Entry 3: Fact Sheet / Cabinet -->
+        <article class="dispatch-item reveal py-8 group" data-category="cabinet">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+            <div class="md:col-span-3 text-[11px] uppercase tracking-[0.16em] text-mute">
+              <span class="font-bold text-executive-blue block">Cabinet Action</span>
+              <time class="font-mono text-ink-800 block mt-1">11 August 2026</time>
+              <span class="block mt-1 text-mute">Cabinet Committee on Security</span>
+            </div>
+            <div class="md:col-span-9">
+              <h3 class="font-headline font-normal text-[22px] sm:text-[26px] leading-[1.25] text-ink-900 group-hover:text-executive-blue transition-colors">
+                <a href="#dispatch" onclick="openReleaseModal('CCS Clearance for Maritime Patrol Fleet Modernization', 'Cabinet Action', 'Ministry of Defence')" class="ulink">
+                  Cabinet Committee on Security clears procurement of next-generation maritime patrol aircraft with indigenous sonar suites
+                </a>
+              </h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-graphite font-light max-w-[70ch]">
+                Strengthening anti-submarine warfare and long-range ocean surveillance under the Make-in-India guidelines with 65% domestic component integration.
+              </p>
+              <div class="mt-4 flex items-center gap-4 text-[12px] text-mute font-medium">
+                <span class="text-ink-800 font-mono">Ministry of Defence</span>
+                <span>·</span>
+                <span class="hover:text-ink-900 cursor-pointer">Cabinet Press Release</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Entry 4: Fact Check Clarification -->
+        <article class="dispatch-item reveal py-8 group" data-category="factcheck">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+            <div class="md:col-span-3 text-[11px] uppercase tracking-[0.16em] text-verdict">
+              <span class="font-bold block flex items-center gap-1.5"><i class="fa-solid fa-circle-exclamation"></i> Official Debunk</span>
+              <time class="font-mono text-ink-800 block mt-1">10 August 2026</time>
+              <span class="block mt-1 text-mute">PIB Fact Check Unit</span>
+            </div>
+            <div class="md:col-span-9">
+              <div class="inline-block px-2 py-0.5 rounded bg-verdict/10 border border-verdict/30 text-verdict text-[10px] font-bold tracking-widest uppercase mb-2">
+                COUNTERFEIT NOTICE
+              </div>
+              <h3 class="font-headline font-normal text-[22px] sm:text-[26px] leading-[1.25] text-ink-900 group-hover:text-verdict transition-colors">
+                <a href="#fact-check" class="ulink">
+                  Fraudulent circular alleging Ministry of Railways is distributing free lifetime AC travel passes under Amrit Bharat scheme
+                </a>
+              </h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-graphite font-light max-w-[70ch]">
+                <strong>Official Finding:</strong> The Ministry of Railways has issued zero circulars authorizing free travel passes via third-party web portals. This is a phishing campaign harvesting sensitive voter identifiers.
+              </p>
+              <div class="mt-4 flex items-center gap-4 text-[12px] text-mute font-medium">
+                <span class="text-ink-800 font-mono">Verified by PIB</span>
+                <span>·</span>
+                <span class="text-verdict font-semibold">WhatsApp Helpline: +91 87997 11259</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Entry 5: Release -->
+        <article class="dispatch-item reveal py-8 group" data-category="release">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+            <div class="md:col-span-3 text-[11px] uppercase tracking-[0.16em] text-mute">
+              <span class="font-bold text-executive-blue block">Official Release</span>
+              <time class="font-mono text-ink-800 block mt-1">09 August 2026</time>
+              <span class="block mt-1 text-mute">Ministry of Commerce &amp; Industry</span>
+            </div>
+            <div class="md:col-span-9">
+              <h3 class="font-headline font-normal text-[22px] sm:text-[26px] leading-[1.25] text-ink-900 group-hover:text-executive-blue transition-colors">
+                <a href="#dispatch" onclick="openReleaseModal('Merchandise Exports Touch All-Time High', 'Official Release', 'Ministry of Commerce & Industry')" class="ulink">
+                  Merchandise and services exports surpass monthly benchmark, driven by electronic manufacturing and pharmaceutical dispatches
+                </a>
+              </h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-graphite font-light max-w-[70ch]">
+                Bilateral trade flows under the Comprehensive Economic Partnership Agreements (CEPA) registered an annualized growth rate of 14.8%.
+              </p>
+              <div class="mt-4 flex items-center gap-4 text-[12px] text-mute font-medium">
+                <span class="text-ink-800 font-mono">Vanijya Bhawan, New Delhi</span>
+                <span>·</span>
+                <span class="hover:text-ink-900 cursor-pointer">Statistical Tables (PDF 1.4 MB)</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Entry 6: Gazette & Publication -->
+        <article class="dispatch-item reveal py-8 group" data-category="publication">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+            <div class="md:col-span-3 text-[11px] uppercase tracking-[0.16em] text-mute">
+              <span class="font-bold text-executive-blue block">Gazette Publication</span>
+              <time class="font-mono text-ink-800 block mt-1">08 August 2026</time>
+              <span class="block mt-1 text-mute">Publications Division / MIB</span>
+            </div>
+            <div class="md:col-span-9">
+              <h3 class="font-headline font-normal text-[22px] sm:text-[26px] leading-[1.25] text-ink-900 group-hover:text-executive-blue transition-colors">
+                <a href="#publications" class="ulink">
+                  Release of India 2026 Reference Annual: The Authoritative Digest of Country Progress and Institutional Reforms
+                </a>
+              </h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-graphite font-light max-w-[70ch]">
+                The definitive national yearbook compiling constitutional, economic, demographic, scientific, and administrative developments across all 28 States and 8 Union Territories.
+              </p>
+              <div class="mt-4 flex items-center gap-4 text-[12px] text-mute font-medium">
+                <span class="text-ink-800 font-mono">Soochna Bhawan</span>
+                <span>·</span>
+                <span class="hover:text-ink-900 cursor-pointer">Official PDF (4.2 MB)</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Pagination / Archive Link -->
+      <div class="reveal mt-12 pt-8 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-[12px] text-mute">
+          Page <strong class="text-ink-900 font-mono">1</strong> of 48 · Historical records preserved since 1919
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="px-4 py-2 border border-line bg-white text-xs font-semibold text-graphite hover:border-ink-900 hover:text-ink-900 transition-colors rounded-sm" disabled>Previous</button>
+          <button class="px-4 py-2 border border-ink-900 bg-ink-900 text-xs font-semibold text-white hover:bg-black transition-colors rounded-sm">Next Page →</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: SPOKESPERSON BRIEFINGS & DIPLOMATIC STATEMENTS -->
+  <section id="briefings-statements" class="border-t border-line bg-white py-20" aria-labelledby="briefings-title">
+    <div class="max-w-[1360px] mx-auto px-5 sm:px-10">
+      
+      <div class="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-line">
+        <div>
+          <div class="text-[11px] uppercase tracking-[0.2em] text-executive-blue font-bold">Verbatim Transcripts</div>
+          <h2 id="briefings-title" class="font-serif font-normal text-[38px] sm:text-[46px] leading-[1.05] tracking-[-0.02em] text-ink-900 mt-1">
+            Briefings &amp; Statements
+          </h2>
+          <p class="mt-2 text-[15px] text-mute font-headline font-light">
+            Spokesperson press briefings, bilateral joint statements, and official delegations readouts.
+          </p>
+        </div>
+        <a href="#latest-dispatches" class="text-[12.5px] uppercase tracking-wider font-bold text-ink-900 inline-flex items-center gap-1 group">
+          <span class="ulink">Browse All Briefing Records</span>
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
+        
+        <article class="reveal group pt-6 border-t-2 border-ink-900 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[10.5px] uppercase tracking-[0.16em] text-executive-blue font-bold">
+              <span>Weekly Press Briefing</span>
+              <time class="font-mono text-mute">12 Aug 2026</time>
+            </div>
+            <h3 class="mt-3 font-headline font-normal text-[20px] leading-[1.3] text-ink-900 group-hover:text-executive-blue transition-colors">
+              <a href="#briefing-detail" onclick="openReleaseModal('Transcript of Weekly Media Briefing by Official Spokesperson', 'Weekly Briefing', 'Ministry of External Affairs')" class="ulink">
+                Transcript of Weekly Media Briefing by Official Spokesperson Randhir Jaiswal at Jawaharlal Nehru Bhawan
+              </a>
+            </h3>
+            <p class="mt-3 text-[13.5px] leading-relaxed text-graphite font-light">
+              Addressing questions on border diplomacy, multilateral summit preparation, trade corridors, and neighborhood engagements.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-line flex items-center justify-between text-[11.5px] text-mute">
+            <span class="font-mono">MEA Media Wing</span>
+            <span class="font-bold text-ink-900">Transcript &amp; Video (42:15)</span>
+          </div>
+        </article>
+
+        <article class="reveal group pt-6 border-t-2 border-ink-900 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[10.5px] uppercase tracking-[0.16em] text-executive-blue font-bold">
+              <span>Joint Communiqué</span>
+              <time class="font-mono text-mute">10 Aug 2026</time>
+            </div>
+            <h3 class="mt-3 font-headline font-normal text-[20px] leading-[1.3] text-ink-900 group-hover:text-executive-blue transition-colors">
+              <a href="#briefing-detail" onclick="openReleaseModal('India–France Joint Statement: Horizon 2047 Roadmap', 'Joint Statement', 'Prime Minister's Office')" class="ulink">
+                India–France Joint Statement: Horizon 2047 Roadmap on Defense, Space, and Clean Energy Partnership
+              </a>
+            </h3>
+            <p class="mt-3 text-[13.5px] leading-relaxed text-graphite font-light">
+              Agreement on co-development of jet engines, underwater surveillance sensors, civil nuclear small modular reactors, and AI sovereignty.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-line flex items-center justify-between text-[11.5px] text-mute">
+            <span class="font-mono">PMO India</span>
+            <span class="font-bold text-ink-900">Bilateral Communiqué</span>
+          </div>
+        </article>
+
+        <article class="reveal group pt-6 border-t-2 border-ink-900 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[10.5px] uppercase tracking-[0.16em] text-executive-blue font-bold">
+              <span>Official Readout</span>
+              <time class="font-mono text-mute">08 Aug 2026</time>
+            </div>
+            <h3 class="mt-3 font-headline font-normal text-[20px] leading-[1.3] text-ink-900 group-hover:text-executive-blue transition-colors">
+              <a href="#briefing-detail" onclick="openReleaseModal('Readout of Bilateral Meeting with UAE Leadership', 'Official Readout', 'Ministry of External Affairs')" class="ulink">
+                Readout of high-level delegation talks between Prime Minister Narendra Modi and the President of the UAE
+              </a>
+            </h3>
+            <p class="mt-3 text-[13.5px] leading-relaxed text-graphite font-light">
+              Operationalization of Local Currency Settlement (LCS) system, India-Middle East-Europe Economic Corridor (IMEC), and digital payment linkages.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-line flex items-center justify-between text-[11.5px] text-mute">
+            <span class="font-mono">Abu Dhabi / New Delhi</span>
+            <span class="font-bold text-ink-900">Full Text Available</span>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: SPEECHES & REMARKS (WHITE HOUSE REMARKS PATTERN) -->
+  <section id="speeches" class="border-t border-line bg-paper-warm py-20" aria-labelledby="sp-heading">
+    <div class="max-w-[1360px] mx-auto px-5 sm:px-10">
+      
+      <div class="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-line">
+        <div>
+          <div class="text-[11px] uppercase tracking-[0.2em] text-executive-blue font-bold">Executive Addresses</div>
+          <h2 id="sp-heading" class="font-serif font-normal text-[38px] sm:text-[46px] leading-[1.05] tracking-[-0.02em] text-ink-900 mt-1">
+            Speeches &amp; <em class="italic">Remarks</em>
+          </h2>
+          <p class="mt-2 text-[15px] text-mute font-headline font-light">
+            Full official texts, translations across 22 scheduled Indian languages, and unedited speech archives.
+          </p>
+        </div>
+        <a href="#latest-dispatches" class="text-[12.5px] uppercase tracking-wider font-bold text-ink-900 inline-flex items-center gap-1 group">
+          <span class="ulink">Browse All Speeches</span>
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
+        
+        <article class="reveal group pt-6 border-t-2 border-ink-900 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[10.5px] uppercase tracking-[0.16em] text-executive-blue font-bold">
+              <span>National Address</span>
+              <time class="font-mono text-mute">15 Aug 2026</time>
+            </div>
+            <h3 class="mt-3 font-headline font-normal text-[20px] leading-[1.3] text-ink-900 group-hover:text-executive-blue transition-colors">
+              <a href="#dispatch" onclick="openReleaseModal('Prime Minister Address on 78th Independence Day', 'National Address', 'Prime Minister\'s Office')" class="ulink">
+                Text of Prime Minister Narendra Modi's Address from the Ramparts of the Red Fort on 78th Independence Day
+              </a>
+            </h3>
+            <p class="mt-3 text-[13.5px] leading-relaxed text-graphite font-light">
+              Outlining the roadmap for Viksit Bharat 2047, manufacturing sovereignty, indigenous semiconductor chip fabrication, and space missions.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-line flex items-center justify-between text-[11.5px] text-mute">
+            <span class="font-mono">PMO · Red Fort, Delhi</span>
+            <span class="font-bold text-ink-900">Transcript &amp; Video</span>
+          </div>
+        </article>
+
+        <article class="reveal group pt-6 border-t-2 border-ink-900 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[10.5px] uppercase tracking-[0.16em] text-executive-blue font-bold">
+              <span>Inaugural Remarks</span>
+              <time class="font-mono text-mute">10 Aug 2026</time>
+            </div>
+            <h3 class="mt-3 font-headline font-normal text-[20px] leading-[1.3] text-ink-900 group-hover:text-executive-blue transition-colors">
+              <a href="#dispatch" onclick="openReleaseModal('Remarks at Global Fintech Fest 2026', 'Inaugural Address', 'Ministry of Finance')" class="ulink">
+                Remarks by Union Finance Minister Nirmala Sitharaman at the Inauguration of Global Fintech Fest 2026
+              </a>
+            </h3>
+            <p class="mt-3 text-[13.5px] leading-relaxed text-graphite font-light">
+              On expanding digital public infrastructure, cross-border UPI settlements, AI-driven credit scoring, and cybersecurity resilience.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-line flex items-center justify-between text-[11.5px] text-mute">
+            <span class="font-mono">Jio World Centre, Mumbai</span>
+            <span class="font-bold text-ink-900">Transcript Available</span>
+          </div>
+        </article>
+
+        <article class="reveal group pt-6 border-t-2 border-ink-900 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[10.5px] uppercase tracking-[0.16em] text-executive-blue font-bold">
+              <span>Keynote Address</span>
+              <time class="font-mono text-mute">02 Aug 2026</time>
+            </div>
+            <h3 class="mt-3 font-headline font-normal text-[20px] leading-[1.3] text-ink-900 group-hover:text-executive-blue transition-colors">
+              <a href="#dispatch" onclick="openReleaseModal('Keynote Address on AI in Public Governance', 'Keynote Speech', 'MeitY')" class="ulink">
+                Keynote Address by Union Minister Ashwini Vaishnaw on Responsible AI Governance in Public Administration
+              </a>
+            </h3>
+            <p class="mt-3 text-[13.5px] leading-relaxed text-graphite font-light">
+              Deploying sovereign foundational models in government service delivery, citizen grievances, and multilingual document summarization.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-line flex items-center justify-between text-[11.5px] text-mute">
+            <span class="font-mono">Bharat Mandapam, Delhi</span>
+            <span class="font-bold text-ink-900">PDF &amp; Recording</span>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: MINISTRY DIRECTORY (WHITE HOUSE TICKER / STREAM) -->
+  <section id="ministry-directory" class="border-t border-line bg-paper-warm py-16" aria-labelledby="min-title">
+    <div class="max-w-[1360px] mx-auto px-5 sm:px-10">
+      
+      <div class="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-line">
+        <div>
+          <div class="text-[11px] uppercase tracking-[0.2em] text-executive-blue font-bold">Cabinet Portfolios</div>
+          <h2 id="min-title" class="font-serif font-normal text-[36px] sm:text-[42px] leading-[1.05] tracking-[-0.02em] text-ink-900 mt-1">
+            Ministry Updates
+          </h2>
+          <p class="mt-2 text-[14.5px] text-mute font-headline font-light">
+            Continuous dispatches categorized across all 54 Union Ministries and Departments.
+          </p>
+        </div>
+
+        <div class="text-[12px] font-mono text-mute">
+          54 Ministries Reporting Live
+        </div>
+      </div>
+
+      <!-- Animated Continuous Marquee Ticker -->
+      <div class="reveal mt-8 overflow-hidden fade-edges py-4">
+        <ul id="marquee-ticker" class="flex w-max gap-12 animate-marquee hover:[animation-play-state:paused] font-headline font-light text-[26px] sm:text-[34px] tracking-[-0.02em] text-ink-900/80 whitespace-nowrap">
+          
+          <li><a href="#" class="hover:text-executive-blue transition-colors">Finance <sup class="font-mono text-[11px] font-bold text-mute align-top px-1.5 py-0.5 rounded bg-white border border-line">42</sup></a></li>
+          <li class="text-line">·</li>
+          <li><a href="#" class="hover:text-executive-blue transition-colors">External Affairs <sup class="font-mono text-[11px] font-bold text-mute align-top px-1.5 py-0.5 rounded bg-white border border-line">28</sup></a></li>
+          <li class="text-line">·</li>
+          <li><a href="#" class="hover:text-executive-blue transition-colors">Defence <sup class="font-mono text-[11px] font-bold text-mute align-top px-1.5 py-0.5 rounded bg-white border border-line">19</sup></a></li>
+          <li class="text-line">·</li>
+          <li><a href="#" class="hover:text-executive-blue transition-colors">Home Affairs <sup class="font-mono text-[11px] font-bold text-mute align-top px-1.5 py-0.5 rounded bg-white border border-line">34</sup></a></li>
+          <li class="text-line">·</li>
+          <li><a href="#" class="hover:text-executive-blue transition-colors">Health &amp; Family Welfare <sup class="font-mono text-[11px] font-bold text-mute align-top px-1.5 py-0.5 rounded bg-white border border-line">21</sup></a></li>
+          <li class="text-line">·</li>
+          <li><a href="#" class="hover:text-executive-blue transition-colors">Electronics &amp; IT <sup class="font-mono text-[11px] font-bold text-mute align-top px-1.5 py-0.5 rounded bg-white border border-line">16</sup></a></li>
+          <li class="text-line">·</li>
+          <li><a href="#" class="hover:text-executive-blue transition-colors">Railways <sup class="font-mono text-[11px] font-bold text-mute align-top px-1.5 py-0.5 rounded bg-white border border-line">15</sup></a></li>
+          <li class="text-line">·</li>
+          <li><a href="#" class="hover:text-executive-blue transition-colors">Commerce &amp; Industry <sup class="font-mono text-[11px] font-bold text-mute align-top px-1.5 py-0.5 rounded bg-white border border-line">23</sup></a></li>
+          <li class="text-line">·</li>
+          <li><a href="#" class="hover:text-executive-blue transition-colors">New &amp; Renewable Energy <sup class="font-mono text-[11px] font-bold text-mute align-top px-1.5 py-0.5 rounded bg-white border border-line">11</sup></a></li>
+          <li class="text-line">·</li>
+          <li><a href="#" class="hover:text-executive-blue transition-colors">Science &amp; Technology <sup class="font-mono text-[11px] font-bold text-mute align-top px-1.5 py-0.5 rounded bg-white border border-line">18</sup></a></li>
+          <li class="text-line">·</li>
+
+          <!-- Duplicated loop for infinite scroll -->
+          <li aria-hidden="true"><a href="#" tabindex="-1" class="hover:text-executive-blue transition-colors">Finance <sup class="font-mono text-[11px] font-bold text-mute align-top px-1.5 py-0.5 rounded bg-white border border-line">42</sup></a></li>
+          <li class="text-line" aria-hidden="true">·</li>
+          <li aria-hidden="true"><a href="#" tabindex="-1" class="hover:text-executive-blue transition-colors">External Affairs <sup class="font-mono text-[11px] font-bold text-mute align-top px-1.5 py-0.5 rounded bg-white border border-line">28</sup></a></li>
+          <li class="text-line" aria-hidden="true">·</li>
+          <li aria-hidden="true"><a href="#" tabindex="-1" class="hover:text-executive-blue transition-colors">Defence <sup class="font-mono text-[11px] font-bold text-mute align-top px-1.5 py-0.5 rounded bg-white border border-line">19</sup></a></li>
+          <li class="text-line" aria-hidden="true">·</li>
+          <li aria-hidden="true"><a href="#" tabindex="-1" class="hover:text-executive-blue transition-colors">Home Affairs <sup class="font-mono text-[11px] font-bold text-mute align-top px-1.5 py-0.5 rounded bg-white border border-line">34</sup></a></li>
+          <li class="text-line" aria-hidden="true">·</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: EXECUTIVE DARK MEDIA ROOM (WHITE HOUSE MIDNIGHT THEME) -->
+  <section id="media-room" class="bg-ink-900 text-white py-24" aria-labelledby="media-title">
+    <div class="max-w-[1360px] mx-auto px-5 sm:px-10">
+      
+      <div class="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-white/15">
+        <div>
+          <div class="text-[11px] uppercase tracking-[0.22em] text-cyan-400 font-bold">Broadcast &amp; Visual Archives</div>
+          <h2 id="media-title" class="font-serif font-normal text-[40px] sm:text-[48px] leading-[1] tracking-[-0.02em] text-white mt-1">
+            Executive Media Room
+          </h2>
+          <p class="mt-2 text-[15px] text-white/60 font-headline font-light">
+            High-resolution photographic pool, broadcast recordings, and live media briefings.
+          </p>
+        </div>
+
+        <ul class="flex flex-wrap gap-x-6 gap-y-2 text-[12.5px] uppercase tracking-wider font-semibold text-white/50">
+          <li><span class="text-white border-b-2 border-white pb-1">Photo Pool</span></li>
+          <li><span class="hover:text-white transition-colors cursor-pointer">Briefings</span></li>
+          <li><span class="hover:text-white transition-colors cursor-pointer">Live Broadcasts</span></li>
+          <li><span class="hover:text-white transition-colors cursor-pointer">Press Facility Access</span></li>
+        </ul>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+        
+        <!-- Large Video Spotlight (2 cols, 2 rows) -->
+        <div class="reveal group col-span-1 sm:col-span-2 lg:row-span-2 relative min-h-[320px] lg:min-h-[500px] overflow-hidden rounded-sm border border-white/10 bg-black cursor-pointer shadow-2xl" onclick="openMediaLightbox('video', 'PIB Delhi, Press Information Bureau_files/I20250430287_-0eu.JPEG', 'Special Press Briefing on Cabinet Decisions by Union Ministers')">
+          <img src="PIB Delhi, Press Information Bureau_files/I20250430287_-0eu.JPEG" 
+               alt="National Media Centre press briefing on Union Cabinet decisions" 
+               class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent"></div>
+          
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center group-hover:scale-110 group-hover:bg-white text-white group-hover:text-ink-900 transition-all duration-300 shadow-2xl">
+              <i class="fa-solid fa-play text-xl ml-1"></i>
+            </span>
+          </div>
+
+          <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+            <div class="flex items-center gap-3 text-[10.5px] uppercase tracking-[0.18em] text-cyan-300 font-bold mb-2">
+              <span class="px-2 py-0.5 rounded bg-black/70 border border-white/20">LIVE RECORDING</span>
+              <span class="font-mono text-white/80">32:15</span>
+            </div>
+            <h3 class="font-headline font-normal text-[24px] sm:text-[30px] leading-[1.2] text-white group-hover:text-cyan-200 transition-colors">
+              Special Cabinet Briefing on Strategic Semiconductor Fabrication &amp; Infrastructure Projects
+            </h3>
+            <p class="mt-2 text-[14px] text-white/70 line-clamp-2 font-light">
+              Addressed by Union Ministers Ashwini Vaishnaw and Cabinet colleagues from the National Media Centre, New Delhi.
+            </p>
+          </div>
+        </div>
+
+        <!-- Photo 1 -->
+        <div class="reveal group relative min-h-[235px] overflow-hidden rounded-sm border border-white/10 bg-black cursor-pointer" onclick="openMediaLightbox('image', 'PIB Delhi, Press Information Bureau_files/I20250604306_-0eu.JPEG', 'Prime Minister Narendra Modi chairing the Union Cabinet meeting at South Block')">
+          <img src="PIB Delhi, Press Information Bureau_files/I20250604306_-0eu.JPEG" 
+               alt="Union Cabinet meeting at South Block" 
+               class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+          <div class="absolute top-3 right-3 text-white/80 text-[10.5px] px-2 py-0.5 rounded bg-black/60 border border-white/20 font-mono">
+            <i class="fa-solid fa-expand mr-1"></i>HD POOL
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-4">
+            <div class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-mono">13 August 2026</div>
+            <h4 class="mt-1 font-headline text-[16px] text-white group-hover:text-cyan-300 transition-colors line-clamp-1">
+              Cabinet Meeting at South Block
+            </h4>
+          </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="reveal group relative min-h-[235px] overflow-hidden rounded-sm border border-white/10 bg-black cursor-pointer" onclick="openMediaLightbox('image', 'PIB Delhi, Press Information Bureau_files/T20260812214418_-0eu.JPG', 'Bilateral engagement and ceremonial state reception at Hyderabad House')">
+          <img src="PIB Delhi, Press Information Bureau_files/T20260812214418_-0eu.JPG" 
+               alt="Bilateral engagement and ceremonial state reception" 
+               class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+          <div class="absolute top-3 right-3 text-white/80 text-[10.5px] px-2 py-0.5 rounded bg-black/60 border border-white/20 font-mono">
+            <i class="fa-solid fa-expand mr-1"></i>HD POOL
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-4">
+            <div class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-mono">12 August 2026</div>
+            <h4 class="mt-1 font-headline text-[16px] text-white group-hover:text-cyan-300 transition-colors line-clamp-1">
+              Bilateral Reception at Hyderabad House
+            </h4>
+          </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="reveal group relative min-h-[235px] overflow-hidden rounded-sm border border-white/10 bg-black cursor-pointer" onclick="openMediaLightbox('image', 'PIB Delhi, Press Information Bureau_files/I20250430289_-0eu.JPG', 'National Media Centre press auditorium during economic presentation')">
+          <img src="PIB Delhi, Press Information Bureau_files/I20250430289_-0eu.JPG" 
+               alt="National Media Centre press auditorium" 
+               class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+          <div class="absolute top-3 right-3 text-white/80 text-[10.5px] px-2 py-0.5 rounded bg-black/60 border border-white/20 font-mono">
+            <i class="fa-solid fa-expand mr-1"></i>HD POOL
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-4">
+            <div class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-mono">10 August 2026</div>
+            <h4 class="mt-1 font-headline text-[16px] text-white group-hover:text-cyan-300 transition-colors line-clamp-1">
+              Economic Presentation at NMC
+            </h4>
+          </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="reveal group relative min-h-[235px] overflow-hidden rounded-sm border border-white/10 bg-black cursor-pointer" onclick="openMediaLightbox('image', 'PIB Delhi, Press Information Bureau_files/I20250530302_-0eu.JPEG', 'Signing of Memorandum of Understanding on Clean Energy Partnership')">
+          <img src="PIB Delhi, Press Information Bureau_files/I20250530302_-0eu.JPEG" 
+               alt="Signing of Memorandum of Understanding on Clean Energy Partnership" 
+               class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+          <div class="absolute top-3 right-3 text-white/80 text-[10.5px] px-2 py-0.5 rounded bg-black/60 border border-white/20 font-mono">
+            <i class="fa-solid fa-expand mr-1"></i>HD POOL
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-4">
+            <div class="text-[10px] uppercase tracking-[0.16em] text-white/60 font-mono">08 August 2026</div>
+            <h4 class="mt-1 font-headline text-[16px] text-white group-hover:text-cyan-300 transition-colors line-clamp-1">
+              MoU on Clean Energy Partnership
+            </h4>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="reveal mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60">
+        <div>
+          Accredited journalists may request raw broadcast stems through the <a href="#" class="underline text-white font-medium hover:text-cyan-300">Accredited Press Pool Desk</a>.
+        </div>
+        <a href="#" class="font-bold text-white uppercase tracking-wider inline-flex items-center gap-1 group">
+          <span class="ulink">Access National Photo Archive</span>
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 6: FACT CHECK & VERIFICATION UNIT -->
+  <section id="fact-check" class="max-w-[1360px] mx-auto px-5 sm:px-10 py-20" aria-labelledby="fc-heading">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+      
+      <!-- Fact Check Sidebar / Verification Helpline -->
+      <div class="lg:col-span-4 reveal">
+        <div class="text-[11px] uppercase tracking-[0.2em] text-verdict font-bold flex items-center gap-1.5">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Official Verification Unit</span>
+        </div>
+        <h2 id="fc-heading" class="font-serif font-normal text-[40px] sm:text-[48px] leading-[1.02] tracking-[-0.02em] text-ink-900 mt-2">
+          Verify Before <em class="italic text-verdict">You Share.</em>
+        </h2>
+        <p class="mt-4 text-[15px] leading-relaxed text-graphite font-headline font-light">
+          The PIB Fact Check Unit monitors digital disinformation, fabricated circulars, and fraudulent schemes targeting citizens in the name of the Government of India.
+        </p>
+
+        <div class="mt-8 p-6 bg-paper-warm border border-line space-y-4 text-xs">
+          <div class="font-bold text-ink-900 uppercase tracking-wider flex items-center gap-2">
+            <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
+            <span>WhatsApp Verification Desk:</span>
+          </div>
+          <div class="font-mono text-ink-900 text-base font-bold pl-7">+91 87997 11259</div>
+          
+          <div class="font-bold text-ink-900 uppercase tracking-wider flex items-center gap-2 pt-3 border-t border-line">
+            <i class="fa-regular fa-envelope text-executive-blue text-base"></i>
+            <span>Electronic Dispatch:</span>
+          </div>
+          <div class="font-mono text-graphite pl-7">pibfactcheck@gmail.com</div>
+
+          <div class="pt-3 border-t border-line">
+            <a href="https://factcheck.pib.gov.in" target="_blank" rel="noopener noreferrer" class="font-bold text-ink-900 underline inline-flex items-center gap-1 hover:text-verdict">
+              Submit an unverified notice for official audit →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Debunked Stream -->
+      <div class="lg:col-span-8 divide-y divide-line">
+        
+        <article class="reveal py-7 group">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="inline-block px-2.5 py-0.5 rounded bg-red-100 border border-verdict text-verdict font-bold font-mono text-[10px] tracking-widest uppercase">
+              FABRICATED NOTICE
+            </span>
+            <span class="text-[11px] font-mono text-mute">Reviewed · 12 August 2026</span>
+          </div>
+          <h3 class="font-headline font-normal text-[22px] sm:text-[24px] leading-[1.3] text-ink-900 group-hover:text-verdict transition-colors">
+            <span class="ulink">Claim: Ministry of Railways is issuing free lifetime travel passes under Amrit Bharat Scheme</span>
+          </h3>
+          <p class="mt-2.5 text-[14.5px] leading-relaxed text-graphite font-light">
+            <strong>Official Fact Check:</strong> The circulated order is completely counterfeit. Indian Railways has introduced no such concession. Official notifications are issued exclusively via <code>indianrailways.gov.in</code>.
+          </p>
+        </article>
+
+        <article class="reveal py-7 group">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="inline-block px-2.5 py-0.5 rounded bg-red-100 border border-verdict text-verdict font-bold font-mono text-[10px] tracking-widest uppercase">
+              PHISHING FRAUD
+            </span>
+            <span class="text-[11px] font-mono text-mute">Reviewed · 10 August 2026</span>
+          </div>
+          <h3 class="font-headline font-normal text-[22px] sm:text-[24px] leading-[1.3] text-ink-900 group-hover:text-verdict transition-colors">
+            <span class="ulink">Claim: Ministry of Finance is disbursing ₹5,000 subsidy via WhatsApp APK download link</span>
+          </h3>
+          <p class="mt-2.5 text-[14.5px] leading-relaxed text-graphite font-light">
+            <strong>Official Fact Check:</strong> This is a credential-harvesting banking scam. The Government of India never distributes financial assistance or subsidies through direct APK file downloads.
+          </p>
+        </article>
+
+        <article class="reveal py-7 group">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="inline-block px-2.5 py-0.5 rounded bg-red-100 border border-verdict text-verdict font-bold font-mono text-[10px] tracking-widest uppercase">
+              COUNTERFEIT APPOINTMENT
+            </span>
+            <span class="text-[11px] font-mono text-mute">Reviewed · 06 August 2026</span>
+          </div>
+          <h3 class="font-headline font-normal text-[22px] sm:text-[24px] leading-[1.3] text-ink-900 group-hover:text-verdict transition-colors">
+            <span class="ulink">Claim: Appointment letter demanding ₹1,850 fee for Assistant Director post in Ministry of Power</span>
+          </h3>
+          <p class="mt-2.5 text-[14.5px] leading-relaxed text-graphite font-light">
+            <strong>Official Fact Check:</strong> Central Government recruitments are managed exclusively through constitutional recruiting bodies (UPSC and SSC). No ministry collects fees through personal UPI or QR codes.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 7: GAZETTE PUBLICATIONS & CABINET ARCHIVES -->
+  <section id="publications" class="border-t border-line bg-paper-cream py-20" aria-labelledby="pub-heading">
+    <div class="max-w-[1360px] mx-auto px-5 sm:px-10">
+      
+      <div class="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-line">
+        <div>
+          <div class="text-[11px] uppercase tracking-[0.2em] text-executive-blue font-bold">Gazette Repository</div>
+          <h2 id="pub-heading" class="font-serif font-normal text-[38px] sm:text-[46px] leading-[1.05] tracking-[-0.02em] text-ink-900 mt-1">
+            Publications &amp; Directives
+          </h2>
+          <p class="mt-2 text-[15px] text-mute font-headline font-light">
+            Statutory yearbooks, monthly policy digests, and cybersecurity directives for public download.
+          </p>
+        </div>
+        <a href="#publications" class="text-[12.5px] uppercase tracking-wider font-bold text-ink-900 inline-flex items-center gap-1 group">
+          <span class="ulink">Complete Gazette Library</span>
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
+        
+        <div class="reveal p-6 bg-white border border-line rounded-sm flex flex-col justify-between hover:border-ink-900 transition-all">
+          <div>
+            <div class="text-[10px] uppercase font-mono tracking-widest text-executive-blue font-bold">Annual Volume</div>
+            <h3 class="mt-2 font-headline text-[18px] leading-snug text-ink-900 font-medium">India 2026 Reference Annual</h3>
+            <p class="mt-2 text-xs text-mute leading-relaxed font-light">The authoritative survey of national developments, governance frameworks, and data across all states.</p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-line flex items-center justify-between text-xs">
+            <span class="font-mono text-mute">PDF · 4.2 MB</span>
+            <a href="https://static.pib.gov.in" target="_blank" class="font-bold text-ink-900 hover:text-executive-blue"><i class="fa-solid fa-arrow-down mr-1"></i>Download</a>
+          </div>
+        </div>
+
+        <div class="reveal p-6 bg-white border border-line rounded-sm flex flex-col justify-between hover:border-ink-900 transition-all">
+          <div>
+            <div class="text-[10px] uppercase font-mono tracking-widest text-executive-blue font-bold">Monthly Digest</div>
+            <h3 class="mt-2 font-headline text-[18px] leading-snug text-ink-900 font-medium">Cabinet Decisions: August 2026</h3>
+            <p class="mt-2 text-xs text-mute leading-relaxed font-light">Comprehensive monthly synthesis of economic approvals, infrastructure allocations, and cabinet orders.</p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-line flex items-center justify-between text-xs">
+            <span class="font-mono text-mute">PDF · 2.1 MB</span>
+            <a href="https://static.pib.gov.in" target="_blank" class="font-bold text-ink-900 hover:text-executive-blue"><i class="fa-solid fa-arrow-down mr-1"></i>Download</a>
+          </div>
+        </div>
+
+        <div class="reveal p-6 bg-white border border-line rounded-sm flex flex-col justify-between hover:border-ink-900 transition-all">
+          <div>
+            <div class="text-[10px] uppercase font-mono tracking-widest text-executive-blue font-bold">Tech Dossier</div>
+            <h3 class="mt-2 font-headline text-[18px] leading-snug text-ink-900 font-medium">Digital Public Infrastructure</h3>
+            <p class="mt-2 text-xs text-mute leading-relaxed font-light">The India Stack architectural blueprint for cross-border financial systems and identity verification.</p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-line flex items-center justify-between text-xs">
+            <span class="font-mono text-mute">PDF · 3.4 MB</span>
+            <a href="https://static.pib.gov.in" target="_blank" class="font-bold text-ink-900 hover:text-executive-blue"><i class="fa-solid fa-arrow-down mr-1"></i>Download</a>
+          </div>
+        </div>
+
+        <div class="reveal p-6 bg-white border border-line rounded-sm flex flex-col justify-between hover:border-ink-900 transition-all">
+          <div>
+            <div class="text-[10px] uppercase font-mono tracking-widest text-executive-blue font-bold">Security SOP</div>
+            <h3 class="mt-2 font-headline text-[18px] leading-snug text-ink-900 font-medium">Cybersafety Directive 2026</h3>
+            <p class="mt-2 text-xs text-mute leading-relaxed font-light">I4C guidelines on countering algorithmic deception, phishing kits, and social spoofing threats.</p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-line flex items-center justify-between text-xs">
+            <span class="font-mono text-mute">PDF · 1.2 MB</span>
+            <a href="https://static.pib.gov.in" target="_blank" class="font-bold text-ink-900 hover:text-executive-blue"><i class="fa-solid fa-arrow-down mr-1"></i>Download</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- WHITE HOUSE STYLE EXECUTIVE ARCHIVAL FOOTER -->
+<footer id="footer" class="bg-white border-t border-line text-graphite">
+  <div class="max-w-[1360px] mx-auto px-5 sm:px-10 pt-16 pb-8">
+    
+    <div class="grid grid-cols-2 md:grid-cols-12 gap-10">
+      
+      <!-- Brand & Bureau Seal -->
+      <div class="col-span-2 md:col-span-4 reveal">
+        <div class="flex items-center gap-3">
+          <img src="PIB Delhi, Press Information Bureau_files/emblem-of-india_-0eu.png" alt="State Emblem of India" class="h-12 w-auto object-contain">
+          <div class="border-l border-line pl-3">
+            <div class="font-headline text-[19px] font-medium text-ink-900">Press Information Bureau</div>
+            <div class="text-[10px] uppercase tracking-[0.2em] text-mute font-sans">Government of India · भारत सरकार</div>
+          </div>
+        </div>
+        
+        <p class="mt-5 text-[14px] leading-relaxed text-mute font-headline font-light max-w-[36ch]">
+          The official news agency and communications register of the Government of India, disseminating policy decisions, briefings, and verified announcements since 1919.
+        </p>
+
+        <!-- Official Channels -->
+        <ul class="mt-6 flex gap-2.5" aria-label="Official Social Media Handles">
+          <li><a href="https://twitter.com/PIB_India" target="_blank" rel="noopener noreferrer" aria-label="PIB on X (Twitter)" class="w-9 h-9 rounded-full border border-line flex items-center justify-center text-graphite hover:bg-ink-900 hover:text-white hover:border-ink-900 transition-all"><i class="fa-brands fa-x-twitter text-[13px]"></i></a></li>
+          <li><a href="https://www.facebook.com/pibindia" target="_blank" rel="noopener noreferrer" aria-label="PIB on Facebook" class="w-9 h-9 rounded-full border border-line flex items-center justify-center text-graphite hover:bg-ink-900 hover:text-white hover:border-ink-900 transition-all"><i class="fa-brands fa-facebook-f text-[13px]"></i></a></li>
+          <li><a href="https://www.instagram.com/pibindia" target="_blank" rel="noopener noreferrer" aria-label="PIB on Instagram" class="w-9 h-9 rounded-full border border-line flex items-center justify-center text-graphite hover:bg-ink-900 hover:text-white hover:border-ink-900 transition-all"><i class="fa-brands fa-instagram text-[13px]"></i></a></li>
+          <li><a href="https://www.youtube.com/pibindia" target="_blank" rel="noopener noreferrer" aria-label="PIB on YouTube" class="w-9 h-9 rounded-full border border-line flex items-center justify-center text-graphite hover:bg-ink-900 hover:text-white hover:border-ink-900 transition-all"><i class="fa-brands fa-youtube text-[13px]"></i></a></li>
+          <li><a href="https://t.me/pib_india" target="_blank" rel="noopener noreferrer" aria-label="PIB on Telegram" class="w-9 h-9 rounded-full border border-line flex items-center justify-center text-graphite hover:bg-ink-900 hover:text-white hover:border-ink-900 transition-all"><i class="fa-brands fa-telegram text-[13px]"></i></a></li>
+        </ul>
+      </div>
+
+      <!-- Links: Newsroom Taxonomy -->
+      <div class="reveal md:col-span-2">
+        <h4 class="text-[11px] uppercase tracking-[0.18em] text-ink-900 font-bold mb-4 font-sans">Newsroom</h4>
+        <ul class="space-y-2.5 text-[13px] text-graphite">
+          <li><a href="#latest-dispatches" class="ulink hover:text-ink-900">All Dispatches</a></li>
+          <li><a href="#briefings-statements" class="ulink hover:text-ink-900">Briefings &amp; Statements</a></li>
+          <li><a href="#latest-river" class="ulink hover:text-ink-900">Cabinet Actions</a></li>
+          <li><a href="#speeches" class="ulink hover:text-ink-900">Remarks &amp; Speeches</a></li>
+          <li><a href="#media-room" class="ulink hover:text-ink-900">Photo &amp; Video Pool</a></li>
+          <li><a href="#fact-check" class="ulink hover:text-ink-900">Fact Check Unit</a></li>
+        </ul>
+      </div>
+
+      <!-- Links: Organization -->
+      <div class="reveal md:col-span-2">
+        <h4 class="text-[11px] uppercase tracking-[0.18em] text-ink-900 font-bold mb-4 font-sans">Bureau</h4>
+        <ul class="space-y-2.5 text-[13px] text-graphite">
+          <li><a href="#" class="ulink hover:text-ink-900">About the PIB</a></li>
+          <li><a href="#" class="ulink hover:text-ink-900">Director Generals</a></li>
+          <li><a href="#" class="ulink hover:text-ink-900">Regional Offices</a></li>
+          <li><a href="#" class="ulink hover:text-ink-900">Media Accreditation</a></li>
+          <li><a href="#" class="ulink hover:text-ink-900">Citizen's Charter</a></li>
+          <li><a href="#" class="ulink hover:text-ink-900">Right to Information (RTI)</a></li>
+        </ul>
+      </div>
+
+      <!-- Links: Policies -->
+      <div class="reveal md:col-span-2">
+        <h4 class="text-[11px] uppercase tracking-[0.18em] text-ink-900 font-bold mb-4 font-sans">Policies</h4>
+        <ul class="space-y-2.5 text-[13px] text-graphite">
+          <li><a href="#" class="ulink hover:text-ink-900">Terms of Use</a></li>
+          <li><a href="#" class="ulink hover:text-ink-900">Privacy Policy</a></li>
+          <li><a href="#" class="ulink hover:text-ink-900">Copyright Policy</a></li>
+          <li><a href="#" class="ulink hover:text-ink-900">Hyperlinking Policy</a></li>
+          <li><a href="#" class="ulink hover:text-ink-900">Accessibility Statement</a></li>
+          <li><button id="btn-reopen-cookies-footer" class="hover:text-ink-900 underline cursor-pointer text-left">Cookie Preferences</button></li>
+        </ul>
+      </div>
+
+      <!-- Links: Portals -->
+      <div class="reveal md:col-span-2">
+        <h4 class="text-[11px] uppercase tracking-[0.18em] text-ink-900 font-bold mb-4 font-sans">National Portals</h4>
+        <ul class="space-y-2.5 text-[13px] text-graphite">
+          <li><a href="https://www.india.gov.in" target="_blank" rel="noopener noreferrer" class="ulink hover:text-ink-900">india.gov.in</a></li>
+          <li><a href="https://mygov.in" target="_blank" rel="noopener noreferrer" class="ulink hover:text-ink-900">MyGov.in</a></li>
+          <li><a href="https://pmindia.gov.in" target="_blank" rel="noopener noreferrer" class="ulink hover:text-ink-900">PM India</a></li>
+          <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/feb/doc2025217503701.pdf" target="_blank" rel="noopener noreferrer" class="ulink hover:text-ink-900 flex items-center gap-1">STQC Quality Audit <span class="text-[10px] text-mute font-mono">(PDF)</span></a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Editorial Watermark Header -->
+    <div class="mt-16 overflow-hidden border-t border-line pt-8">
+      <div class="split font-serif font-normal text-[8vw] lg:text-[124px] leading-[0.88] tracking-[-0.04em] text-ink-900/10 whitespace-nowrap select-none" aria-hidden="true">
+        Press Information Bureau
+      </div>
+    </div>
+
+    <!-- Bottom Attribution Bar -->
+    <div class="mt-6 py-6 border-t border-line flex flex-col md:flex-row items-center justify-between gap-3 text-[12px] text-mute font-sans">
+      <div>
+        <span>Website designed, hosted &amp; maintained by <strong>National Informatics Centre (NIC)</strong>.</span>
+        <span class="block sm:inline sm:ml-2">Content owned &amp; updated by <strong>Press Information Bureau, Government of India</strong>.</span>
+      </div>
+      <div class="flex items-center gap-4 text-graphite">
+        <span>Last Updated: <strong class="font-mono text-ink-900">13 August 2026</strong></span>
+        <span class="text-line">|</span>
+        <!-- <a href="conceptA-DBIM.html" class="underline text-executive-blue hover:text-ink-900 font-medium">Switch to Concept A (DBIM 3.0)</a> -->
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Interactive Search Modal Dialog -->
+<div id="search-modal" class="fixed inset-0 z-[100] hidden items-start justify-center pt-16 sm:pt-24 px-4 bg-ink-900/60 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="modal-search-title">
+  <div class="w-full max-w-[660px] bg-white rounded-lg shadow-2xl border border-line overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+    <div class="p-4 border-b border-line flex items-center gap-3">
+      <i class="fa-solid fa-magnifying-glass text-mute text-base"></i>
+      <h2 id="modal-search-title" class="sr-only">Search press releases and government records</h2>
+      <input id="modal-search-input" type="search" placeholder="Type a keyword, scheme, or minister (e.g. Solar, 6G, Finance, MEA)..." class="flex-1 min-w-0 bg-transparent text-[16px] text-ink-900 placeholder:text-mute focus:outline-none">
+      <button id="btn-close-search" class="w-8 h-8 rounded-full hover:bg-paper text-mute hover:text-ink-900 flex items-center justify-center transition-colors" aria-label="Close search">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="p-4 bg-paper/50 max-h-[380px] overflow-y-auto">
+      <div class="text-[11px] uppercase tracking-[0.14em] text-mute font-bold mb-3">Suggested Topics</div>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <button class="search-tag px-3 py-1 rounded-full bg-white border border-line text-xs hover:border-ink-900 hover:text-ink-900 transition-colors">PM Surya Ghar</button>
+        <button class="search-tag px-3 py-1 rounded-full bg-white border border-line text-xs hover:border-ink-900 hover:text-ink-900 transition-colors">Bharat 6G Mission</button>
+        <button class="search-tag px-3 py-1 rounded-full bg-white border border-line text-xs hover:border-ink-900 hover:text-ink-900 transition-colors">National Quantum Mission</button>
+        <button class="search-tag px-3 py-1 rounded-full bg-white border border-line text-xs hover:border-ink-900 hover:text-ink-900 transition-colors">Direct Tax Collections</button>
+        <button class="search-tag px-3 py-1 rounded-full bg-white border border-line text-xs hover:border-ink-900 hover:text-ink-900 transition-colors">Cabinet Decisions</button>
+      </div>
+
+      <div id="search-results-list" class="divide-y divide-line">
+        <div class="py-2.5 text-xs text-mute font-sans">Press <kbd class="px-1.5 py-0.5 rounded bg-white border border-line font-mono">ESC</kbd> to exit or start typing to filter results.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Release Document Reader Modal (White House Gazette Viewer) -->
+<div id="release-modal" class="fixed inset-0 z-[110] hidden items-center justify-center p-4 sm:p-8 bg-ink-900/70 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="release-modal-title">
+  <div class="max-w-[760px] w-full bg-white rounded-md border border-line shadow-2xl p-6 sm:p-10 max-h-[85vh] overflow-y-auto">
+    <div class="flex items-start justify-between border-b border-line pb-4">
+      <div>
+        <div id="release-modal-category" class="text-[11px] font-mono uppercase tracking-[0.18em] text-executive-blue font-bold">Cabinet Action</div>
+        <h3 id="release-modal-title" class="font-headline text-[24px] sm:text-[28px] leading-[1.2] text-ink-900 mt-1 font-normal"></h3>
+        <div id="release-modal-meta" class="text-[12px] text-mute font-mono mt-2">PIB New Delhi · 13 August 2026</div>
+      </div>
+      <button id="btn-close-release" class="text-mute hover:text-ink-900 p-2 text-lg"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    
+    <div id="release-modal-body" class="mt-6 text-[15px] sm:text-[16px] leading-[1.75] text-graphite font-headline font-light space-y-4">
+      <p>The Prime Minister chaired the meeting of the Union Cabinet today, sanctioning comprehensive national policy frameworks across sustainable energy and industrial infrastructure.</p>
+      <p>Under the landmark initiative, direct financial incentives will be disbursed to households and enterprise stakeholders with streamlined digital validation under the Digital Public Infrastructure architecture.</p>
+      <p>State governments and distribution agencies have been directed to ensure frictionless interconnectivity and rapid deployment schedules.</p>
+    </div>
+
+    <div class="mt-8 pt-6 border-t border-line flex flex-wrap items-center justify-between gap-4 text-xs font-sans">
+      <span class="text-mute">Document ID: <strong class="font-mono text-ink-900">PIB-DEL-20260813-0091</strong></span>
+      <div class="flex items-center gap-3">
+        <button onclick="window.print()" class="px-3.5 py-1.5 border border-line rounded bg-paper-warm hover:bg-white text-ink-900 font-semibold"><i class="fa-solid fa-print mr-1"></i> Print</button>
+        <button id="btn-done-release" class="px-4 py-1.5 bg-ink-900 text-white rounded font-semibold hover:bg-black">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Media Lightbox Modal -->
+<div id="media-lightbox" class="fixed inset-0 z-[120] hidden items-center justify-center bg-black/95 p-4 sm:p-10" role="dialog" aria-modal="true" aria-label="Media Preview">
+  <button id="btn-close-lightbox" class="absolute top-6 right-6 text-white/70 hover:text-white text-2xl w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors z-20" aria-label="Close media preview">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <div class="max-w-[1020px] w-full text-center">
+    <div id="lightbox-container" class="relative max-h-[75vh] flex items-center justify-center overflow-hidden rounded"></div>
+    <div id="lightbox-caption" class="mt-4 text-white/80 font-headline text-lg"></div>
+  </div>
+</div>
+
+<!-- DPDP Act 2023 Compliant Cookie Banner -->
+<aside id="cookie-banner" class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-[420px] z-[90] p-5 rounded-sm bg-white border border-line shadow-2xl text-graphite" role="dialog" aria-labelledby="cb-title">
+  <div class="flex items-start gap-3">
+    <i class="fa-solid fa-shield-halved text-ink-900 text-lg mt-0.5"></i>
+    <div class="flex-1">
+      <h3 id="cb-title" class="font-headline font-semibold text-ink-900 text-sm">Privacy &amp; Data Notice</h3>
+      <p class="mt-1.5 text-xs text-mute leading-relaxed font-sans">
+        In accordance with the <strong>Digital Personal Data Protection (DPDP) Act, 2023</strong>, this portal utilizes essential telemetry cookies for secure operations.
+      </p>
+      <div class="mt-4 flex flex-wrap items-center gap-2">
+        <button id="btn-cookie-accept" class="px-3.5 py-1.5 rounded-sm bg-ink-900 text-white text-xs font-semibold hover:bg-black transition-colors">Accept All</button>
+        <button id="btn-cookie-reject" class="px-3 py-1.5 rounded-sm border border-line bg-white hover:bg-paper-warm text-xs font-semibold text-graphite transition-colors">Reject Optional</button>
+        <button id="btn-cookie-manage" class="px-2 py-1.5 text-xs text-mute hover:text-ink-900 underline">Preferences</button>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- Cookie Preferences Modal -->
+<div id="cookie-modal" class="fixed inset-0 z-[105] hidden items-center justify-center p-4 bg-ink-900/60 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="cpm-title">
+  <div class="max-w-[480px] w-full bg-white rounded-md border border-line shadow-2xl p-6">
+    <div class="flex items-center justify-between border-b border-line pb-3">
+      <h3 id="cpm-title" class="font-headline font-semibold text-ink-900 text-lg">Data Preferences (DPDP Act 2023)</h3>
+      <button id="btn-close-cookie-modal" class="text-mute hover:text-ink-900"><i class="fa-solid fa-xmark text-lg"></i></button>
+    </div>
+    <div class="mt-4 space-y-3.5 text-xs text-graphite">
+      <div class="p-3 bg-paper rounded-sm border border-line">
+        <div class="flex items-center justify-between font-semibold text-ink-900">
+          <span>Core Operational Cookies</span>
+          <span class="text-emerald-700 font-mono">Mandatory</span>
+        </div>
+        <p class="mt-1 text-mute">Security authentication, anti-forgery tokens, and high-availability routing.</p>
+      </div>
+      <div class="p-3 bg-paper rounded-sm border border-line">
+        <div class="flex items-center justify-between font-semibold text-ink-900">
+          <span>Accessibility &amp; CWV Telemetry</span>
+          <input type="checkbox" id="pref-analytics" checked class="w-4 h-4 rounded text-ink-900 focus:ring-ink-900 cursor-pointer">
+        </div>
+        <p class="mt-1 text-mute">Anonymized performance measurements to monitor Core Web Vitals across devices.</p>
+      </div>
+    </div>
+    <div class="mt-6 flex justify-end gap-2 border-t border-line pt-4">
+      <button id="btn-save-cookie-prefs" class="px-4 py-2 rounded-sm bg-ink-900 text-white text-xs font-semibold hover:bg-black transition-colors">Save Selection</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 1. Word-mask split headlines
+  document.querySelectorAll('.split').forEach(el => {
+    const words = el.innerHTML.trim().split(/\s+/);
+    el.innerHTML = words.map((w, i) => `<span class="w"><span style="transition-delay:${i * 45}ms">${w}</span></span>`).join(' ');
+  });
+
+  // 2. Intersection Observer reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        e.target.querySelectorAll('.split').forEach(s => s.classList.add('in'));
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll('.reveal, .split, .wipe').forEach(el => {
+    const sibs = [...el.parentElement.children].filter(c => c.classList.contains('reveal'));
+    const i = sibs.indexOf(el);
+    if (i > 0) el.style.transitionDelay = Math.min(i * 75, 380) + 'ms';
+    reduce ? el.classList.add('in') : io.observe(el);
+  });
+
+  // 3. Header hide/show on scroll + Reading Progress
+  const header = document.getElementById('header');
+  const bar = document.getElementById('progress');
+  let lastY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    if (bar) bar.style.transform = `scaleX(${h > 0 ? y / h : 0})`;
+    if (!reduce && header) {
+      if (y > lastY && y > 180) {
+        header.style.transform = 'translateY(-100%)';
+      } else {
+        header.style.transform = 'translateY(0)';
+      }
+    }
+    lastY = y;
+  }, { passive: true });
+
+  // 4. White House Topper Category Filter
+  const catPills = document.querySelectorAll('.cat-pill');
+  const dispatchItems = document.querySelectorAll('.dispatch-item');
+  const visibleCount = document.getElementById('visible-count');
+
+  catPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      catPills.forEach(p => {
+        p.setAttribute('aria-pressed', 'false');
+        p.className = 'cat-pill px-4 py-2 rounded-sm text-graphite hover:text-ink-900 hover:bg-white transition-all duration-200';
+      });
+      pill.setAttribute('aria-pressed', 'true');
+      pill.className = 'cat-pill px-4 py-2 rounded-sm bg-ink-900 text-white transition-all duration-200';
+
+      const cat = pill.dataset.category;
+      let count = 0;
+
+      dispatchItems.forEach(item => {
+        item.classList.add('out');
+      });
+
+      setTimeout(() => {
+        dispatchItems.forEach(item => {
+          const match = (cat === 'all' || item.dataset.category === cat);
+          item.classList.toggle('hidden', !match);
+          if (match) count++;
+        });
+        if (visibleCount) visibleCount.textContent = count;
+        requestAnimationFrame(() => {
+          dispatchItems.forEach(item => item.classList.remove('out'));
+        });
+      }, reduce ? 0 : 200);
+    });
+  });
+
+  // 5. Topper In-Page Search Filter
+  const topperSearch = document.getElementById('topper-search-input');
+  const topperCount = document.getElementById('topper-search-count');
+  if (topperSearch) {
+    topperSearch.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      let matched = 0;
+      dispatchItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const match = (q === '' || text.includes(q));
+        item.classList.toggle('hidden', !match);
+        if (match) matched++;
+      });
+      if (topperCount) topperCount.textContent = q ? `${matched} FOUND` : 'ALL';
+      if (visibleCount) visibleCount.textContent = matched;
+    });
+  }
+
+  // 6. Interactive Search Modal
+  const searchModal = document.getElementById('search-modal');
+  const openSearchBtn = document.getElementById('btn-open-search');
+  const closeSearchBtn = document.getElementById('btn-close-search');
+  const modalInput = document.getElementById('modal-search-input');
+  const modalResults = document.getElementById('search-results-list');
+
+  const openSearch = () => {
+    if (!searchModal) return;
+    searchModal.classList.remove('hidden');
+    searchModal.classList.add('flex');
+    setTimeout(() => modalInput && modalInput.focus(), 60);
+  };
+  const closeSearch = () => {
+    if (!searchModal) return;
+    searchModal.classList.add('hidden');
+    searchModal.classList.remove('flex');
+  };
+
+  if (openSearchBtn) openSearchBtn.addEventListener('click', openSearch);
+  if (closeSearchBtn) closeSearchBtn.addEventListener('click', closeSearch);
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      openSearch();
+    }
+    if (e.key === 'Escape' && searchModal && !searchModal.classList.contains('hidden')) {
+      closeSearch();
+    }
+  });
+
+  const searchCorpus = [
+    { title: "Cabinet approves PM Surya Ghar: Muft Bijli Yojana with ₹75,021 Crore outlay", category: "Cabinet Action", authority: "PMO / MNRE" },
+    { title: "Bharat 6G Mission approved to accelerate domestic patents and communications standardisation", category: "Cabinet Action", authority: "DoT / Communications" },
+    { title: "National Quantum Mission invites proposals for quantum computing hardware testbeds", category: "Policy Directive", authority: "Science & Technology" },
+    { title: "Direct Tax Collections expand by 18.2% to ₹12.01 Lakh Crore", category: "Economic Data", authority: "Finance" },
+    { title: "PIB Fact Check: Ministry of Railways Free Lifetime Travel Pass notice is FAKE", category: "Fact Check", authority: "Railways" },
+    { title: "Transcript of Weekly Media Briefing by Official Spokesperson Randhir Jaiswal", category: "Briefing", authority: "MEA" }
+  ];
+
+  if (modalInput && modalResults) {
+    modalInput.addEventListener('input', (e) => {
+      const val = e.target.value.toLowerCase().trim();
+      if (!val) {
+        modalResults.innerHTML = '<div class="py-2.5 text-xs text-mute">Press <kbd class="px-1.5 py-0.5 rounded bg-white border border-line font-mono">ESC</kbd> to exit or start typing to filter results.</div>';
+        return;
+      }
+      const matches = searchCorpus.filter(item => item.title.toLowerCase().includes(val) || item.authority.toLowerCase().includes(val) || item.category.toLowerCase().includes(val));
+      if (matches.length === 0) {
+        modalResults.innerHTML = `<div class="py-4 text-xs text-mute">No records found matching "<strong>${val}</strong>". Try a broader query.</div>`;
+      } else {
+        modalResults.innerHTML = matches.map(m => `
+          <div onclick="openReleaseModal('${m.title.replace(/'/g, "\\'")}', '${m.category}', '${m.authority}'); closeSearch();" class="block py-2.5 hover:bg-white px-2 rounded cursor-pointer transition-colors">
+            <div class="flex items-center gap-2 text-[10.5px] uppercase font-mono text-executive-blue">
+              <span>${m.category}</span> · <span>${m.authority}</span>
+            </div>
+            <div class="text-[14px] font-headline text-ink-900 mt-0.5">${m.title}</div>
+          </div>
+        `).join('');
+      }
+    });
+
+    document.querySelectorAll('.search-tag').forEach(tag => {
+      tag.addEventListener('click', () => {
+        modalInput.value = tag.textContent.trim();
+        modalInput.dispatchEvent(new Event('input'));
+      });
+    });
+  }
+
+  // 7. Release Document Reader Modal
+  const releaseModal = document.getElementById('release-modal');
+  const releaseTitle = document.getElementById('release-modal-title');
+  const releaseCategory = document.getElementById('release-modal-category');
+  const releaseMeta = document.getElementById('release-modal-meta');
+  const closeReleaseBtn = document.getElementById('btn-close-release');
+  const doneReleaseBtn = document.getElementById('btn-done-release');
+
+  window.openReleaseModal = (title, category, ministry) => {
+    if (!releaseModal) return;
+    if (releaseTitle) releaseTitle.textContent = title;
+    if (releaseCategory) releaseCategory.textContent = category;
+    if (releaseMeta) releaseMeta.textContent = `${ministry} · 13 August 2026 · PIB New Delhi`;
+    releaseModal.classList.remove('hidden');
+    releaseModal.classList.add('flex');
+  };
+
+  const closeRelease = () => {
+    if (!releaseModal) return;
+    releaseModal.classList.add('hidden');
+    releaseModal.classList.remove('flex');
+  };
+
+  if (closeReleaseBtn) closeReleaseBtn.addEventListener('click', closeRelease);
+  if (doneReleaseBtn) doneReleaseBtn.addEventListener('click', closeRelease);
+  if (releaseModal) releaseModal.addEventListener('click', (e) => { if (e.target === releaseModal) closeRelease(); });
+
+  // 8. Lightbox for Media Preview
+  const lightbox = document.getElementById('media-lightbox');
+  const lightboxBox = document.getElementById('lightbox-container');
+  const lightboxCap = document.getElementById('lightbox-caption');
+  const closeLbBtn = document.getElementById('btn-close-lightbox');
+
+  window.openMediaLightbox = (type, src, caption) => {
+    if (!lightbox || !lightboxBox) return;
+    if (type === 'image') {
+      lightboxBox.innerHTML = `<img src="${src}" alt="${caption}" class="max-h-[75vh] max-w-full rounded object-contain shadow-2xl">`;
+    } else {
+      lightboxBox.innerHTML = `
+        <div class="aspect-video w-full max-w-[880px] bg-black flex items-center justify-center rounded border border-white/20">
+          <div class="text-center p-8">
+            <i class="fa-solid fa-circle-play text-5xl text-white mb-3"></i>
+            <div class="text-white text-lg font-headline">${caption}</div>
+            <div class="text-xs text-white/50 mt-1 font-mono">Official Broadcast Feed (1080p HD)</div>
+          </div>
+        </div>`;
+    }
+    if (lightboxCap) lightboxCap.textContent = caption;
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+  };
+
+  const closeLightbox = () => {
+    if (!lightbox) return;
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+  };
+  if (closeLbBtn) closeLbBtn.addEventListener('click', closeLightbox);
+  if (lightbox) lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+  // 9. Accessibility Panel & Font Sizer
+  const a11yPanel = document.getElementById('a11y-panel');
+  const toggleA11yBtn = document.getElementById('btn-toggle-a11y');
+  const closeA11yBtn = document.getElementById('btn-close-a11y');
+  let currentZoom = 100;
+
+  if (toggleA11yBtn && a11yPanel) {
+    toggleA11yBtn.addEventListener('click', () => a11yPanel.classList.toggle('hidden'));
+  }
+  if (closeA11yBtn && a11yPanel) {
+    closeA11yBtn.addEventListener('click', () => a11yPanel.classList.add('hidden'));
+  }
+
+  const fontInc = document.getElementById('font-inc');
+  const fontDec = document.getElementById('font-dec');
+  const fontReset = document.getElementById('font-reset');
+
+  if (fontInc) {
+    fontInc.addEventListener('click', () => {
+      if (currentZoom < 125) {
+        currentZoom += 5;
+        document.body.style.fontSize = `${currentZoom}%`;
+      }
+    });
+  }
+  if (fontDec) {
+    fontDec.addEventListener('click', () => {
+      if (currentZoom > 90) {
+        currentZoom -= 5;
+        document.body.style.fontSize = `${currentZoom}%`;
+      }
+    });
+  }
+  if (fontReset) {
+    fontReset.addEventListener('click', () => {
+      currentZoom = 100;
+      document.body.style.fontSize = '100%';
+    });
+  }
+
+  const contrastBtn = document.getElementById('btn-toggle-contrast');
+  if (contrastBtn) {
+    contrastBtn.addEventListener('click', () => {
+      document.body.classList.toggle('high-contrast');
+    });
+  }
+
+  // 10. DPDP Act 2023 Cookie Management
+  const cookieBanner = document.getElementById('cookie-banner');
+  const cookieModal = document.getElementById('cookie-modal');
+  const acceptCookie = document.getElementById('btn-cookie-accept');
+  const rejectCookie = document.getElementById('btn-cookie-reject');
+  const manageCookie = document.getElementById('btn-cookie-manage');
+  const reopenCookieFooter = document.getElementById('btn-reopen-cookies-footer');
+  const closeCookieModal = document.getElementById('btn-close-cookie-modal');
+  const saveCookiePrefs = document.getElementById('btn-save-cookie-prefs');
+
+  if (localStorage.getItem('pib_dpdp_consent')) {
+    if (cookieBanner) cookieBanner.classList.add('hidden');
+  }
+
+  const hideBanner = () => {
+    if (cookieBanner) cookieBanner.classList.add('hidden');
+    localStorage.setItem('pib_dpdp_consent', 'true');
+  };
+
+  if (acceptCookie) acceptCookie.addEventListener('click', hideBanner);
+  if (rejectCookie) rejectCookie.addEventListener('click', hideBanner);
+  if (manageCookie) manageCookie.addEventListener('click', () => {
+    if (cookieModal) {
+      cookieModal.classList.remove('hidden');
+      cookieModal.classList.add('flex');
+    }
+  });
+  if (reopenCookieFooter) reopenCookieFooter.addEventListener('click', () => {
+    if (cookieModal) {
+      cookieModal.classList.remove('hidden');
+      cookieModal.classList.add('flex');
+    }
+  });
+  if (closeCookieModal) closeCookieModal.addEventListener('click', () => {
+    if (cookieModal) {
+      cookieModal.classList.add('hidden');
+      cookieModal.classList.remove('flex');
+    }
+  });
+  if (saveCookiePrefs) saveCookiePrefs.addEventListener('click', () => {
+    if (cookieModal) {
+      cookieModal.classList.add('hidden');
+      cookieModal.classList.remove('flex');
+    }
+    hideBanner();
+  });
+
+})();
+</script>
+</body>
+</html>

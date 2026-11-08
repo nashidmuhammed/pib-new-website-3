@@ -199,6 +199,12 @@ tailwind.config = {
     </div>
   </aside>
 
+  <!-- Screen Reader Accessibility Statement Target -->
+  <section id="screen-reader-info" class="sr-only">
+    <h2>Screen Reader Access Information</h2>
+    <p>This portal complies with World Wide Web Consortium (W3C) Web Content Accessibility Guidelines (WCAG) 2.1 level AA and GIGW 3.0 mandates. It supports standard assistive technologies including NVDA, JAWS, and VoiceOver.</p>
+  </section>
+
   <!-- Header 1 (Sticky, Accessible, Condenses on Scroll) -->
   <header id="site-header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-ink-200 transition-all duration-300">
     
@@ -220,6 +226,11 @@ tailwind.config = {
           <span class="font-medium text-ink-800" lang="hi">भारत सरकार</span>
           <span class="text-ink-300" aria-hidden="true">|</span>
           <span>Government of India</span>
+          <span class="text-ink-300 hidden md:inline" aria-hidden="true">|</span>
+          <!-- <a href="conceptB.html" class="hidden md:inline-flex items-center gap-1 font-medium text-dbim-700 hover:text-dbim-900 underline underline-offset-2 text-[11.5px]" title="Switch to Concept B (Editorial Newsroom layout)">
+            <span>Concept B (Editorial)</span>
+            <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
+          </a> -->
         </div>
 
         <!-- Right: Accessibility Controls & Language -->
@@ -277,8 +288,7 @@ tailwind.config = {
         <div class="flex-shrink-0">
           <img src="PIB Delhi, Press Information Bureau_files/emblem-of-india_-0eu.png" 
                alt="State Emblem of India" 
-               class="h-14 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-               onerror="this.onerror=null; this.src='PIB%20Delhi,%20Press%20Information%20Bureau_files/emblem-of-india_-0eu.png';">
+               class="h-14 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
         </div>
 
         <div class="h-10 w-px bg-ink-200 hidden sm:block" aria-hidden="true"></div>
@@ -287,8 +297,7 @@ tailwind.config = {
         <div class="flex items-center gap-3">
           <img src="PIB Delhi, Press Information Bureau_files/pib-logo_-0eu.png" 
                alt="PIB Logo" 
-               class="h-12 sm:h-14 w-auto object-contain hidden md:block"
-               onerror="this.onerror=null; this.src='PIB%20Delhi,%20Press%20Information%20Bureau_files/pib-logo_-0eu.png';">
+               class="h-12 sm:h-14 w-auto object-contain hidden md:block">
           
           <div class="leading-tight">
             <span class="block text-[19px] sm:text-[21px] font-bold text-dbim-950 tracking-[-0.01em]">
@@ -690,8 +699,7 @@ tailwind.config = {
               <img id="lead-img" 
                    src="PIB Delhi, Press Information Bureau_files/T20260812214418_-0eu.JPG" 
                    alt="Former President Shri Ram Nath Kovind autobiography release addressed by Prime Minister"
-                   class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                   onerror="this.onerror=null; this.src='PIB%20Delhi,%20Press%20Information%20Bureau_files/T20260812214418_-0eu.JPG';">
+                   class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
               <div class="absolute top-4 left-4">
                 <span id="lead-badge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-dbim-950/85 backdrop-blur-md text-white text-[11px] font-semibold tracking-wider uppercase">
                   Featured Release
@@ -835,8 +843,7 @@ tailwind.config = {
         <div class="mx-auto w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-white shadow-xl overflow-hidden bg-gradient-to-tr from-dbim-100 to-dbim-200 flex items-center justify-center p-1">
           <img src="PIB Delhi, Press Information Bureau_files/prime-minister_-0eu.png" 
                alt="Shri Narendra Modi, Prime Minister of India" 
-               class="w-full h-full object-cover object-top"
-               onerror="this.onerror=null; this.src='PIB%20Delhi,%20Press%20Information%20Bureau_files/prime-minister_-0eu.png';">
+               class="w-full h-full object-cover object-top">
         </div>
 
         <!-- Label -->
@@ -904,8 +911,7 @@ tailwind.config = {
               <div class="aspect-[4/5] rounded-lg overflow-hidden bg-gradient-to-b from-dbim-100 to-dbim-50 flex items-center justify-center p-2 mb-4 border border-ink-100">
                 <img src="PIB Delhi, Press Information Bureau_files/I20250429285_-0eu.JPG" 
                      alt="Shri Ashwini Vaishnaw, Union Minister of Information &amp; Broadcasting"
-                     class="w-full h-full object-cover object-top rounded transition-transform duration-300 group-hover:scale-105"
-                     onerror="this.onerror=null; this.src='PIB%20Delhi,%20Press%20Information%20Bureau_files/I20250429285_-0eu.JPG';">
+                     class="w-full h-full object-cover object-top rounded transition-transform duration-300 group-hover:scale-105">
               </div>
               <h3 class="font-bold text-[15px] text-dbim-950">Shri Ashwini Vaishnaw</h3>
               <p class="text-[12px] font-medium text-dbim-700 mt-0.5">Union Minister</p>
@@ -917,8 +923,7 @@ tailwind.config = {
               <div class="aspect-[4/5] rounded-lg overflow-hidden bg-gradient-to-b from-dbim-100 to-dbim-50 flex items-center justify-center p-2 mb-4 border border-ink-100">
                 <img src="PIB Delhi, Press Information Bureau_files/I20250430289_-0eu.JPG" 
                      alt="Dr. L. Murugan, Minister of State for Information &amp; Broadcasting"
-                     class="w-full h-full object-cover object-top rounded transition-transform duration-300 group-hover:scale-105"
-                     onerror="this.onerror=null; this.src='PIB%20Delhi,%20Press%20Information%20Bureau_files/I20250430289_-0eu.JPG';">
+                     class="w-full h-full object-cover object-top rounded transition-transform duration-300 group-hover:scale-105">
               </div>
               <h3 class="font-bold text-[15px] text-dbim-950">Dr. L. Murugan</h3>
               <p class="text-[12px] font-medium text-dbim-700 mt-0.5">Minister of State</p>
@@ -930,8 +935,7 @@ tailwind.config = {
               <div class="aspect-[4/5] rounded-lg overflow-hidden bg-gradient-to-b from-dbim-100 to-dbim-50 flex items-center justify-center p-2 mb-4 border border-ink-100">
                 <img src="PIB Delhi, Press Information Bureau_files/I20250530302_-0eu.JPEG" 
                      alt="Smt. Sheyphali B. Sharan, Principal Director General, Press Information Bureau"
-                     class="w-full h-full object-cover object-top rounded transition-transform duration-300 group-hover:scale-105"
-                     onerror="this.onerror=null; this.src='PIB%20Delhi,%20Press%20Information%20Bureau_files/I20250530302_-0eu.JPEG';">
+                     class="w-full h-full object-cover object-top rounded transition-transform duration-300 group-hover:scale-105">
               </div>
               <h3 class="font-bold text-[15px] text-dbim-950">Smt. Sheyphali B. Sharan</h3>
               <p class="text-[12px] font-medium text-dbim-700 mt-0.5">Principal DG (IIS)</p>
@@ -1260,8 +1264,7 @@ tailwind.config = {
             <div class="relative aspect-video bg-ink-900 overflow-hidden">
               <img src="PIB Delhi, Press Information Bureau_files/I20250604306_-0eu.JPEG" 
                    alt="Cabinet Briefing by Union Minister Ashwini Vaishnaw at National Media Centre"
-                   class="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
-                   onerror="this.onerror=null; this.src='PIB%20Delhi,%20Press%20Information%20Bureau_files/I20250604306_-0eu.JPEG';">
+                   class="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105">
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-center justify-center">
                 <button class="w-16 h-16 rounded-full bg-red-600/90 text-white flex items-center justify-center text-xl shadow-2xl hover:scale-110 transition-transform focus:outline-none" aria-label="Play Cabinet Briefing Video">
                   <i class="fa-solid fa-play ml-1"></i>
@@ -1359,8 +1362,7 @@ tailwind.config = {
             <div class="flex items-center gap-3 mb-4">
               <img src="PIB Delhi, Press Information Bureau_files/emblem-of-india_-0eu.png" 
                    alt="State Emblem of India" 
-                   class="h-14 w-auto brightness-200 invert"
-                   onerror="this.onerror=null; this.src='PIB%20Delhi,%20Press%20Information%20Bureau_files/emblem-of-india_-0eu.png';">
+                   class="h-14 w-auto brightness-200 invert">
               <div class="leading-tight text-white">
                 <span class="block text-lg font-bold">Press Information Bureau</span>
                 <span class="block text-xs text-white/70 font-devanagari">पत्र सूचना कार्यालय</span>
@@ -1396,9 +1398,9 @@ tailwind.config = {
             </div>
 
             <!-- Column 2: Offerings & Accreditation -->
-            <div>
+            <div id="footer-info">
               <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-white/10 pb-2">
-                Services
+                Services &amp; RTI
               </h4>
               <ul class="space-y-2.5 text-white/70">
                 <li><a href="#offerings" class="hover:text-white transition-colors">Central Press Accreditation</a></li>
@@ -1470,6 +1472,8 @@ tailwind.config = {
         <span>Last Updated: <strong class="text-white font-mono">13 August 2026</strong></span>
         <span>·</span>
         <span>Visitors: <strong class="text-white font-mono tabular-nums">48,291,048</strong></span>
+        <span class="text-white/20">|</span>
+        <!-- <a href="conceptB.html" class="hover:text-white underline transition-colors" title="View Concept B (Editorial Newsroom)">Concept B</a> -->
       </div>
     </div>
 
