@@ -130,26 +130,9 @@ tailwind.config = {
 <!-- Top Reading Progress Indicator -->
 <div id="progress" class="fixed top-0 left-0 h-[3px] w-full origin-left scale-x-0 bg-ink-900 z-[80] transition-transform duration-75" aria-hidden="true"></div>
 
-<!-- Top Concept Switcher Banner -->
-<!-- <div id="concept-label" class="bg-paper border-b border-line text-[11px] text-graphite">
-  <div class="max-w-[1360px] mx-auto px-5 sm:px-10 py-1.5 flex flex-wrap items-center justify-between gap-3">
-    <div class="flex items-center gap-2">
-      <span class="inline-flex items-center gap-1 font-semibold text-ink-900 px-2 py-0.5 rounded bg-black/5 text-[10px] tracking-wider uppercase">Concept B</span>
-      <span>Executive Editorial Newsroom · White House Architectural Design Pattern</span>
-    </div>
-    <div class="flex items-center gap-4">
-      <a href="conceptA-DBIM.html" class="inline-flex items-center gap-1.5 text-executive-blue hover:text-ink-900 font-medium underline underline-offset-2">
-        <i class="fa-solid fa-arrow-left text-[9px]"></i> Switch to Concept A (DBIM 3.0 Portal)
-      </a>
-      <span class="text-line hidden sm:inline" aria-hidden="true">|</span>
-      <span class="text-mute hidden sm:inline">Reference: whitehouse.gov/news &amp; UX Pilot v2</span>
-    </div>
-  </div>
-</div> -->
-
-<!-- Header: hides on scroll down, returns on scroll up -->
-<header id="header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-line transition-transform duration-500 ease-out">
-  <div class="max-w-[1360px] mx-auto px-5 sm:px-10 h-[74px] flex items-center justify-between gap-6">
+<!-- Header: Permanently Fixed on Top (White House Standard) with Smooth Condensed State -->
+<header id="header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-line transition-all duration-300">
+  <div id="header-inner" class="max-w-[1360px] mx-auto px-5 sm:px-10 h-[74px] flex items-center justify-between gap-6 transition-all duration-300">
     
     <!-- Emblem & Masthead Lockup -->
     <a href="#" class="flex items-center gap-3 shrink-0 group focus:outline-none" aria-label="Press Information Bureau, Government of India — Home">
@@ -165,17 +148,39 @@ tailwind.config = {
       <img src="PIB Delhi, Press Information Bureau_files/pib-logo_-0eu.png" alt="PIB Official Insignia" class="h-8 w-auto object-contain ml-2 hidden sm:block opacity-90">
     </a>
 
-    <!-- Desktop Navigation -->
+    <!-- Desktop Navigation: Streamlined Editorial Curation (White House Pattern) -->
     <nav aria-label="Main navigation" class="hidden xl:block">
-      <ul id="nav-desktop" class="flex items-center gap-7 text-[13px] tracking-wide text-graphite uppercase font-medium">
-        <li><a href="#topper" aria-current="page" class="text-ink-900 relative after:absolute after:left-0 after:-bottom-1.5 after:h-[2px] after:w-full after:bg-ink-900">Newsroom</a></li>
+      <ul id="nav-desktop" class="flex items-center gap-8 text-[12.5px] tracking-[0.14em] text-graphite uppercase font-semibold">
         <li><a href="#latest-dispatches" class="ulink hover:text-ink-900 transition-colors">Dispatches</a></li>
         <li><a href="#briefings-statements" class="ulink hover:text-ink-900 transition-colors">Briefings</a></li>
-        <li><a href="#speeches" class="ulink hover:text-ink-900 transition-colors">Remarks</a></li>
-        <li><a href="#ministry-directory" class="ulink hover:text-ink-900 transition-colors">Ministries</a></li>
-        <li><a href="#media-room" class="ulink hover:text-ink-900 transition-colors">Media</a></li>
         <li><a href="#fact-check" class="ulink hover:text-ink-900 transition-colors">Fact Check</a></li>
-        <li><a href="#publications" class="ulink hover:text-ink-900 transition-colors">Gazette</a></li>
+        <li><a href="#media-room" class="ulink hover:text-ink-900 transition-colors">Media</a></li>
+        
+        <!-- Discreet Editorial Dropdown for Secondary Sections -->
+        <li class="relative group">
+          <button class="inline-flex items-center gap-1.5 hover:text-ink-900 transition-colors cursor-pointer py-2 focus:outline-none text-[12.5px] uppercase tracking-[0.14em] font-semibold text-graphite" aria-haspopup="true" aria-expanded="false">
+            <span>Explore</span>
+            <i class="fa-solid fa-chevron-down text-[9px] text-mute group-hover:text-ink-900 transition-transform duration-200 group-hover:rotate-180"></i>
+          </button>
+          
+          <!-- Dropdown Card -->
+          <div class="absolute right-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none group-hover:pointer-events-auto z-50">
+            <div class="bg-white border border-line rounded-sm shadow-xl p-2.5 text-xs normal-case tracking-normal space-y-1">
+              <a href="#speeches" class="block px-3 py-2 rounded hover:bg-paper-warm text-graphite hover:text-ink-900 transition-colors">
+                <span class="font-medium text-ink-900 block font-headline text-[13.5px]">Remarks &amp; Speeches</span>
+                <span class="text-[11px] text-mute font-sans">Full verbatim texts &amp; video archives</span>
+              </a>
+              <a href="#ministry-directory" class="block px-3 py-2 rounded hover:bg-paper-warm text-graphite hover:text-ink-900 transition-colors">
+                <span class="font-medium text-ink-900 block font-headline text-[13.5px]">Ministry Directory</span>
+                <span class="text-[11px] text-mute font-sans">Live stream across 54 portfolios</span>
+              </a>
+              <a href="#publications" class="block px-3 py-2 rounded hover:bg-paper-warm text-graphite hover:text-ink-900 transition-colors">
+                <span class="font-medium text-ink-900 block font-headline text-[13.5px]">Gazette &amp; Publications</span>
+                <span class="text-[11px] text-mute font-sans">Reference annuals, SOPs &amp; digests</span>
+              </a>
+            </div>
+          </div>
+        </li>
       </ul>
     </nav>
 
@@ -208,16 +213,14 @@ tailwind.config = {
     </div>
   </div>
 
-  <!-- Compact Horizontal Scrolling Navigation for Tablet & Mobile -->
+  <!-- Compact Streamlined Navigation for Mobile & Tablet -->
   <nav aria-label="Main navigation (mobile)" class="xl:hidden border-t border-line bg-white">
-    <ul class="no-bar max-w-[1360px] mx-auto px-5 sm:px-10 flex gap-6 overflow-x-auto whitespace-nowrap text-[12.5px] uppercase tracking-wider text-graphite font-medium">
-      <li><a href="#topper" aria-current="page" class="block py-2.5 text-ink-900 border-b-2 border-ink-900 font-bold">Newsroom</a></li>
+    <ul class="no-bar max-w-[1360px] mx-auto px-5 sm:px-10 flex gap-6 overflow-x-auto whitespace-nowrap text-[12px] uppercase tracking-wider text-graphite font-semibold">
       <li><a href="#latest-dispatches" class="block py-2.5 hover:text-ink-900 transition-colors">Dispatches</a></li>
       <li><a href="#briefings-statements" class="block py-2.5 hover:text-ink-900 transition-colors">Briefings</a></li>
-      <li><a href="#speeches" class="block py-2.5 hover:text-ink-900 transition-colors">Remarks</a></li>
-      <li><a href="#ministry-directory" class="block py-2.5 hover:text-ink-900 transition-colors">Ministries</a></li>
-      <li><a href="#media-room" class="block py-2.5 hover:text-ink-900 transition-colors">Media</a></li>
       <li><a href="#fact-check" class="block py-2.5 hover:text-ink-900 transition-colors">Fact Check</a></li>
+      <li><a href="#media-room" class="block py-2.5 hover:text-ink-900 transition-colors">Media</a></li>
+      <li><a href="#speeches" class="block py-2.5 hover:text-ink-900 transition-colors">Remarks</a></li>
       <li><a href="#publications" class="block py-2.5 hover:text-ink-900 transition-colors">Gazette</a></li>
     </ul>
   </nav>
@@ -1319,8 +1322,6 @@ tailwind.config = {
       </div>
       <div class="flex items-center gap-4 text-graphite">
         <span>Last Updated: <strong class="font-mono text-ink-900">13 August 2026</strong></span>
-        <span class="text-line">|</span>
-        <!-- <a href="conceptA-DBIM.html" class="underline text-executive-blue hover:text-ink-900 font-medium">Switch to Concept A (DBIM 3.0)</a> -->
       </div>
     </div>
 
@@ -1470,23 +1471,36 @@ tailwind.config = {
     reduce ? el.classList.add('in') : io.observe(el);
   });
 
-  // 3. Header hide/show on scroll + Reading Progress
+  // 3. Persistent Fixed Header with Subtle Condensed State & Reading Progress
   const header = document.getElementById('header');
+  const headerInner = document.getElementById('header-inner');
   const bar = document.getElementById('progress');
-  let lastY = window.scrollY;
 
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
     const h = document.documentElement.scrollHeight - window.innerHeight;
     if (bar) bar.style.transform = `scaleX(${h > 0 ? y / h : 0})`;
-    if (!reduce && header) {
-      if (y > lastY && y > 180) {
-        header.style.transform = 'translateY(-100%)';
+    
+    // Smoothly condense header and add subtle elevation shadow when scrolled
+    if (header) {
+      if (y > 40) {
+        header.classList.add('shadow-[0_4px_20px_rgba(0,0,0,0.06)]');
+        header.classList.remove('bg-white/95');
+        header.classList.add('bg-white/98');
+        if (headerInner) {
+          headerInner.classList.remove('h-[74px]');
+          headerInner.classList.add('h-[62px]');
+        }
       } else {
-        header.style.transform = 'translateY(0)';
+        header.classList.remove('shadow-[0_4px_20px_rgba(0,0,0,0.06)]');
+        header.classList.remove('bg-white/98');
+        header.classList.add('bg-white/95');
+        if (headerInner) {
+          headerInner.classList.remove('h-[62px]');
+          headerInner.classList.add('h-[74px]');
+        }
       }
     }
-    lastY = y;
   }, { passive: true });
 
   // 4. White House Topper Category Filter
