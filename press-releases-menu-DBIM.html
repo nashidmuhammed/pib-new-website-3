@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Press Releases Archive &amp; Media Dispatches | Press Information Bureau</title>
+  <meta name="description" content="Browse, search, and filter all official Press Releases from Ministries and Departments of the Government of India. Filter by Ministry, Region, Language, and Date.">
+  <meta name="keywords" content="PIB All Releases, Press Releases Archive, Government of India news, Ministry dispatches, PIB Delhi">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome 6.5.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts: Noto Sans & Noto Sans Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            devanagari: ['"Noto Sans Devanagari"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            dbim: {
+              950: '#0B1A38',
+              900: '#102552',
+              800: '#16336F',
+              700: '#1E4390',
+              600: '#2A56AE',
+              500: '#3D6DC7',
+              200: '#C9D6EE',
+              100: '#E6ECF7',
+              50: '#F3F6FB'
+            },
+            ink: {
+              900: '#1A1D23',
+              800: '#2A2E37',
+              700: '#3B414B',
+              600: '#4C535F',
+              500: '#5F6672',
+              400: '#8A92A0',
+              300: '#C9CDD4',
+              200: '#E2E5EA',
+              100: '#F1F3F6',
+              50: '#F8FAFC'
+            },
+            saffron: '#E05A1B',
+            indiaGreen: '#0F7A3D'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Accessibility Focus Rings */
+    a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible {
+      outline: 2px solid #1E4390;
+      outline-offset: 2px;
+    }
+
+    /* High Contrast Mode */
+    .high-contrast {
+      background-color: #000000 !important;
+      color: #FFFFFF !important;
+    }
+    .high-contrast * {
+      background-color: transparent !important;
+      color: #FFFFFF !important;
+      border-color: #FFFFFF !important;
+    }
+    .high-contrast a {
+      color: #FFFF00 !important;
+      text-decoration: underline !important;
+    }
+    .high-contrast .bg-white, .high-contrast .bg-ink-50, .high-contrast .bg-dbim-50 {
+      background-color: #121212 !important;
+      border-color: #444444 !important;
+    }
+  </style>
+</head>
+
+<body class="bg-ink-50/40 text-ink-900 font-sans antialiased min-h-screen flex flex-col selection:bg-dbim-100 selection:text-dbim-900">
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-dbim-800 focus:text-white focus:rounded-md focus:shadow-lg focus:outline-none text-xs font-semibold">
+    Skip to main content
+  </a>
+
+  <!-- Top Government Bar (DBIM 3.0) -->
+  <div id="gov-bar" class="border-b border-ink-200 bg-ink-50/90 text-[12px] text-ink-600">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-8 h-9 flex items-center justify-between">
+      
+      <!-- Left: National Identity -->
+      <div class="flex items-center gap-2.5">
+        <svg class="w-4 h-3 rounded-[1px] shadow-sm flex-shrink-0" viewBox="0 0 450 300" aria-hidden="true">
+          <rect width="450" height="100" fill="#FF9933"/>
+          <rect y="100" width="450" height="100" fill="#FFFFFF"/>
+          <rect y="200" width="450" height="100" fill="#138808"/>
+          <circle cx="225" cy="150" r="40" fill="#000080"/>
+          <circle cx="225" cy="150" r="35" fill="#FFFFFF"/>
+          <circle cx="225" cy="150" r="8" fill="#000080"/>
+        </svg>
+        <span class="font-medium text-ink-800" lang="hi">भारत सरकार</span>
+        <span class="text-ink-300" aria-hidden="true">|</span>
+        <span class="font-medium">Government of India</span>
+      </div>
+
+      <!-- Right: Accessibility & Home Link -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <!-- Text Size -->
+        <div class="flex items-center gap-1 border-r border-ink-200 pr-3" role="group" aria-label="Text Size Controls">
+          <button id="btn-zoom-dec" class="px-1.5 py-0.5 rounded hover:bg-ink-200 text-ink-700 hover:text-dbim-900 transition-colors" aria-label="Decrease font size">A-</button>
+          <button id="btn-zoom-def" class="px-1.5 py-0.5 rounded font-semibold text-dbim-900 bg-ink-200/60" aria-label="Reset font size">A</button>
+          <button id="btn-zoom-inc" class="px-1.5 py-0.5 rounded hover:bg-ink-200 text-ink-700 hover:text-dbim-900 transition-colors" aria-label="Increase font size">A+</button>
+        </div>
+
+        <!-- High Contrast -->
+        <button id="btn-contrast-toggle" class="flex items-center gap-1 hover:text-dbim-800 transition-colors" aria-pressed="false" aria-label="Toggle High Contrast Mode">
+          <i class="fa-solid fa-circle-half-stroke text-xs" aria-hidden="true"></i>
+          <span class="hidden sm:inline">Contrast</span>
+        </button>
+
+        <!-- Link back to Concept A Homepage -->
+        <a href="conceptA-DBIM.html" class="inline-flex items-center gap-1 text-dbim-700 hover:text-dbim-900 font-semibold border-l border-ink-200 pl-3">
+          <i class="fa-solid fa-house text-xs"></i>
+          <span class="hidden md:inline">PIB Home</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main Identity Header -->
+  <header class="bg-white border-b border-ink-200 shadow-xs">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between gap-4">
+      
+      <!-- Bilingual Logo Lockup -->
+      <a href="conceptA-DBIM.html" class="flex items-center gap-3.5 sm:gap-4 group focus:outline-none" aria-label="Press Information Bureau Homepage">
+        <img src="PIB Delhi, Press Information Bureau_files/emblem-of-india_-0eu.png" 
+             alt="State Emblem of India" 
+             class="h-14 sm:h-16 w-auto object-contain">
+        
+        <div class="h-10 w-px bg-ink-200 hidden sm:block" aria-hidden="true"></div>
+
+        <div class="flex items-center gap-3">
+          <img src="PIB Delhi, Press Information Bureau_files/pib-logo_-0eu.png" 
+               alt="PIB Logo" 
+               class="h-12 sm:h-14 w-auto object-contain hidden md:block">
+          
+          <div class="leading-tight">
+            <span class="block text-[18px] sm:text-[21px] font-bold text-dbim-950 tracking-[-0.01em]">
+              Press Information Bureau
+            </span>
+            <span class="block text-[12.5px] sm:text-[14px] text-ink-700 font-medium font-devanagari">
+              पत्र सूचना कार्यालय
+            </span>
+            <span class="block text-[10.5px] sm:text-[11.5px] text-ink-500 tracking-wide uppercase">
+              Ministry of Information &amp; Broadcasting · Government of India
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Quick Action: Today's Date & Live Count Badge -->
+      <div class="hidden sm:flex items-center gap-3">
+        <div class="text-right leading-tight">
+          <span class="block text-[12px] font-bold text-dbim-900" id="live-calendar-date">Friday, 13 November 2026</span>
+          <span class="block text-[11px] text-emerald-700 font-medium flex items-center justify-end gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+            142 Dispatches Issued Today
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="hidden lg:block border-t border-ink-100 bg-white" aria-label="Primary site menu">
+      <div class="max-w-[1280px] mx-auto px-4 sm:px-8">
+        <ul class="flex items-center text-[13.5px] font-medium text-ink-700">
+          <li><a href="conceptA-DBIM.html" class="py-3 px-4 block hover:text-dbim-800 transition-colors">Home</a></li>
+          <li><a href="conceptA-DBIM.html#department" class="py-3 px-4 block hover:text-dbim-800 transition-colors">About Us</a></li>
+          <li>
+            <a href="press-releases-menu-DBIM.html" class="py-3 px-4 block text-dbim-800 font-semibold border-b-2 border-dbim-800" aria-current="page">
+              Press Releases
+            </a>
+          </li>
+          <li><a href="conceptA-DBIM.html#offerings" class="py-3 px-4 block hover:text-dbim-800 transition-colors">Media Facilitation</a></li>
+          <li><a href="conceptA-DBIM.html#media-gallery" class="py-3 px-4 block hover:text-dbim-800 transition-colors">Gallery &amp; Multimedia</a></li>
+          <li><a href="conceptA-DBIM.html#explainers" class="py-3 px-4 block hover:text-dbim-800 transition-colors">Research Unit</a></li>
+          <li><a href="conceptA-DBIM.html#fact-check" class="py-3 px-4 block text-amber-700 font-semibold hover:text-amber-900 transition-colors"><i class="fa-solid fa-shield-halved text-xs text-status-warning mr-1"></i>Fact Check</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation Bar -->
+    <div class="bg-ink-50/60 border-t border-ink-100 py-2.5 px-4 sm:px-8 text-[12.5px] text-ink-600">
+      <div class="max-w-[1280px] mx-auto flex items-center justify-between">
+        <ol class="flex items-center gap-2" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex items-center gap-2">
+            <a href="conceptA-DBIM.html" class="hover:text-dbim-800 transition-colors flex items-center gap-1.5" itemprop="item">
+              <i class="fa-solid fa-house text-xs text-ink-400"></i>
+              <span itemprop="name">Home</span>
+            </a>
+            <span class="text-ink-300" aria-hidden="true">/</span>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="text-ink-900 font-semibold" aria-current="page">
+            <span itemprop="name">All Press Releases Archive</span>
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
+
+        <!-- Active View / Filter Summary -->
+        <span class="text-[12px] text-ink-500 hidden sm:inline">
+          Official Government Bulletin Repository (allRel.aspx)
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main id="main-content" class="flex-1 max-w-[1280px] w-full mx-auto px-4 sm:px-8 py-8 sm:py-10">
+    
+    <!-- Page Header & Overview -->
+    <div class="mb-8">
+      <h1 class="text-2xl sm:text-3xl font-bold text-dbim-950 tracking-tight">
+        All Press Releases &amp; Official Dispatches
+      </h1>
+      <p class="text-sm text-ink-600 mt-1 max-w-3xl">
+        Filter real-time government press releases, cabinet decisions, policy backgrounders, and media advisories across all central ministries and regional offices.
+      </p>
+    </div>
+
+    <!-- Advanced Filter & Search Hub (Modern Replacement for allRel.aspx) -->
+    <section aria-labelledby="filter-hub-heading" class="bg-white border border-ink-200 rounded-2xl shadow-sm p-5 sm:p-6 mb-8">
+      <h2 id="filter-hub-heading" class="sr-only">Search and Filter Press Releases</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Filter 1: Search Keywords -->
+        <div>
+          <label for="filter-search" class="block text-xs font-bold text-ink-700 uppercase tracking-wider mb-1.5">
+            Search Keywords
+          </label>
+          <div class="relative">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-400 text-xs"></i>
+            <input type="search" 
+                   id="filter-search" 
+                   placeholder="e.g. Bhashini, Cabinet, Tax..." 
+                   class="w-full h-10 pl-9 pr-3 rounded-xl border border-ink-200 bg-ink-50/50 text-xs text-ink-900 focus:bg-white focus:border-dbim-700 focus:ring-2 focus:ring-dbim-700/15 transition-all">
+          </div>
+        </div>
+
+        <!-- Filter 2: Ministry Selector -->
+        <div>
+          <label for="filter-ministry" class="block text-xs font-bold text-ink-700 uppercase tracking-wider mb-1.5">
+            Ministry / Department
+          </label>
+          <div class="relative">
+            <select id="filter-ministry" class="w-full h-10 px-3 pr-8 rounded-xl border border-ink-200 bg-ink-50/50 text-xs text-ink-900 focus:bg-white focus:border-dbim-700 focus:ring-2 focus:ring-dbim-700/15 transition-all appearance-none cursor-pointer">
+              <option value="all">All Central Ministries (97)</option>
+              <option value="pmo">Prime Minister's Office</option>
+              <option value="meity" selected>Ministry of Electronics &amp; IT</option>
+              <option value="finance">Ministry of Finance</option>
+              <option value="defence">Ministry of Defence</option>
+              <option value="agri">Ministry of Agriculture &amp; Farmers Welfare</option>
+              <option value="health">Ministry of Health &amp; Family Welfare</option>
+              <option value="morth">Ministry of Road Transport &amp; Highways</option>
+              <option value="education">Ministry of Education</option>
+              <option value="home">Ministry of Home Affairs</option>
+              <option value="external">Ministry of External Affairs</option>
+            </select>
+            <i class="fa-solid fa-chevron-down absolute right-3.5 top-1/2 -translate-y-1/2 text-ink-400 text-[10px] pointer-events-none"></i>
+          </div>
+        </div>
+
+        <!-- Filter 3: Regional Office / Kendra -->
+        <div>
+          <label for="filter-region" class="block text-xs font-bold text-ink-700 uppercase tracking-wider mb-1.5">
+            Regional Office / Kendra
+          </label>
+          <div class="relative">
+            <select id="filter-region" class="w-full h-10 px-3 pr-8 rounded-xl border border-ink-200 bg-ink-50/50 text-xs text-ink-900 focus:bg-white focus:border-dbim-700 focus:ring-2 focus:ring-dbim-700/15 transition-all appearance-none cursor-pointer">
+              <option value="all">All Regional Kendras (29)</option>
+              <option value="delhi" selected>PIB Delhi (National Headquarters)</option>
+              <option value="mumbai">PIB Mumbai (Maharashtra &amp; Goa)</option>
+              <option value="chennai">PIB Chennai (Tamil Nadu &amp; Puducherry)</option>
+              <option value="kolkata">PIB Kolkata (Eastern Region)</option>
+              <option value="bengaluru">PIB Bengaluru (Karnataka)</option>
+              <option value="hyderabad">PIB Hyderabad (Telangana)</option>
+              <option value="guwahati">PIB Guwahati (North East Region)</option>
+              <option value="ahmedabad">PIB Ahmedabad (Gujarat)</option>
+            </select>
+            <i class="fa-solid fa-chevron-down absolute right-3.5 top-1/2 -translate-y-1/2 text-ink-400 text-[10px] pointer-events-none"></i>
+          </div>
+        </div>
+
+        <!-- Filter 4: Date Range Presets -->
+        <div>
+          <label for="filter-date" class="block text-xs font-bold text-ink-700 uppercase tracking-wider mb-1.5">
+            Date &amp; Timeline
+          </label>
+          <div class="relative">
+            <select id="filter-date" class="w-full h-10 px-3 pr-8 rounded-xl border border-ink-200 bg-ink-50/50 text-xs text-ink-900 focus:bg-white focus:border-dbim-700 focus:ring-2 focus:ring-dbim-700/15 transition-all appearance-none cursor-pointer">
+              <option value="today" selected>Today (13 November 2026)</option>
+              <option value="yesterday">Yesterday (12 November 2026)</option>
+              <option value="last7">Past 7 Days</option>
+              <option value="month">Current Month (November 2026)</option>
+              <option value="custom">Custom Date Range...</option>
+            </select>
+            <i class="fa-solid fa-calendar-days absolute right-3.5 top-1/2 -translate-y-1/2 text-ink-400 text-[11px] pointer-events-none"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Filter Chips & Active Selections Row -->
+      <div class="mt-4 pt-4 border-t border-ink-100 flex items-center justify-between flex-wrap gap-3">
+        <div class="flex items-center gap-2 flex-wrap text-xs">
+          <span class="text-ink-500 font-semibold mr-1">Active Filters:</span>
+          <span class="inline-flex items-center gap-1.5 bg-dbim-50 text-dbim-800 border border-dbim-200 px-2.5 py-1 rounded-full font-medium">
+            Ministry: MeitY
+            <button class="text-dbim-600 hover:text-dbim-900 ml-0.5" aria-label="Remove MeitY filter">&times;</button>
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-dbim-50 text-dbim-800 border border-dbim-200 px-2.5 py-1 rounded-full font-medium">
+            Region: PIB Delhi
+            <button class="text-dbim-600 hover:text-dbim-900 ml-0.5" aria-label="Remove region filter">&times;</button>
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-dbim-50 text-dbim-800 border border-dbim-200 px-2.5 py-1 rounded-full font-medium">
+            Date: Today (13 Nov)
+            <button class="text-dbim-600 hover:text-dbim-900 ml-0.5" aria-label="Remove date filter">&times;</button>
+          </span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="btn-reset-filters" class="text-xs text-ink-500 hover:text-dbim-800 font-medium underline underline-offset-2">
+            Reset All Filters
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Main Results & Sidebar Grid (12-Col) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Results Column (8 Cols) -->
+      <div class="lg:col-span-8 space-y-4">
+        
+        <!-- Results Status Bar -->
+        <div class="flex items-center justify-between flex-wrap gap-3 pb-2 border-b border-ink-200 text-xs text-ink-600">
+          <div>
+            Showing <strong class="text-dbim-950 font-bold">1–8</strong> of <strong class="text-dbim-950 font-bold">142</strong> official releases
+          </div>
+
+          <!-- Sort and View Mode Controls -->
+          <div class="flex items-center gap-3">
+            <div class="flex items-center gap-1.5">
+              <label for="sort-releases" class="text-ink-500">Sort by:</label>
+              <select id="sort-releases" class="bg-white border border-ink-200 rounded-lg px-2 py-1 text-xs text-ink-800 focus:outline-none">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+                <option value="popular">Most Read</option>
+              </select>
+            </div>
+
+            <!-- RSS Feed Link -->
+            <a href="#" class="inline-flex items-center gap-1 text-amber-700 hover:text-amber-900 font-medium border-l border-ink-200 pl-3">
+              <i class="fa-solid fa-rss text-xs"></i>
+              <span>RSS</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Release Card 1: Featured Flagship Release (Links to Detail Page) -->
+        <article class="bg-white border-2 border-dbim-200/90 hover:border-dbim-500 rounded-2xl p-5 shadow-xs hover:shadow-md transition-all group relative">
+          <div class="flex items-center justify-between flex-wrap gap-2 mb-2.5">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 bg-dbim-50 text-dbim-800 border border-dbim-200 px-2.5 py-0.5 rounded-lg text-xs font-semibold">
+                <i class="fa-solid fa-landmark text-dbim-600 text-[11px]"></i>
+                Ministry of Electronics &amp; IT
+              </span>
+              <span class="text-ink-400">•</span>
+              <span class="text-xs text-ink-500">PIB Delhi</span>
+            </div>
+
+            <div class="flex items-center gap-2 text-xs font-mono text-ink-500">
+              <span class="bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded font-sans font-medium text-[11px]">
+                <i class="fa-solid fa-circle-check text-[10px] mr-1"></i>Verified Dispatch
+              </span>
+              <span class="bg-ink-100 px-1.5 py-0.5 rounded">PRID: 2335673</span>
+            </div>
+          </div>
+
+          <h3 class="text-base sm:text-lg font-bold text-dbim-950 group-hover:text-dbim-700 transition-colors leading-snug mb-2">
+            <a href="press-release-detail-DBIM.html" class="focus:outline-none focus:underline">
+              Digital India BHASHINI Division (DIBD) and NITI Aayog Sign Statement of Intent to Advance Multilingual AI for Inclusive Governance
+            </a>
+          </h3>
+
+          <p class="text-xs sm:text-[13px] text-ink-600 line-clamp-2 leading-relaxed mb-4">
+            Under this landmark partnership, BHASHINI linguistic AI models will be integrated across central dashboards, aspirational district grievance tools, and citizen services to deliver governance in 22 official Indian languages.
+          </p>
+
+          <div class="flex items-center justify-between flex-wrap gap-3 pt-3 border-t border-ink-100 text-xs">
+            <div class="flex items-center gap-2 text-ink-500">
+              <time datetime="2026-11-13T09:21:00+05:30" class="flex items-center gap-1">
+                <i class="fa-regular fa-clock text-ink-400"></i>
+                13 Nov 2026, 09:21 AM
+              </time>
+              <span>•</span>
+              <span>Also in: हिन्दी, தமிழ், বাংলা</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <a href="press-release-detail-DBIM.html" class="inline-flex items-center gap-1 font-semibold text-dbim-700 hover:text-dbim-900 group-hover:translate-x-0.5 transition-transform">
+                <span>Read Full Dispatch</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Release Card 2: Prime Minister's Office -->
+        <article class="bg-white border border-ink-200 hover:border-dbim-300 rounded-2xl p-5 shadow-xs hover:shadow-md transition-all group">
+          <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 bg-purple-50 text-purple-900 border border-purple-200 px-2.5 py-0.5 rounded-lg text-xs font-semibold">
+                <i class="fa-solid fa-star text-purple-700 text-[10px]"></i>
+                Prime Minister's Office
+              </span>
+              <span class="text-ink-400">•</span>
+              <span class="text-xs text-ink-500">PIB Delhi</span>
+            </div>
+            <span class="text-xs font-mono text-ink-500 bg-ink-100 px-1.5 py-0.5 rounded">PRID: 2335672</span>
+          </div>
+
+          <h3 class="text-base sm:text-lg font-bold text-dbim-950 group-hover:text-dbim-700 transition-colors leading-snug mb-2">
+            <a href="press-release-detail-DBIM.html" class="focus:outline-none focus:underline">
+              Prime Minister Shri Narendra Modi extends warm greetings to the nation on the commencement of Chhath Mahaparv
+            </a>
+          </h3>
+
+          <p class="text-xs sm:text-[13px] text-ink-600 line-clamp-2 leading-relaxed mb-4">
+            Prime Minister Shri Narendra Modi today extended heartfelt greetings to citizens across the country on the commencement of the four-day sacred ritual dedicated to faith and sun worship.
+          </p>
+
+          <div class="flex items-center justify-between flex-wrap gap-3 pt-3 border-t border-ink-100 text-xs">
+            <div class="flex items-center gap-2 text-ink-500">
+              <time class="flex items-center gap-1">
+                <i class="fa-regular fa-clock text-ink-400"></i>
+                13 Nov 2026, 08:45 AM
+              </time>
+              <span>•</span>
+              <span>Also in: हिन्दी, मैथिली, भोजपुरी</span>
+            </div>
+
+            <a href="press-release-detail-DBIM.html" class="inline-flex items-center gap-1 font-semibold text-dbim-700 hover:text-dbim-900">
+              <span>Read Full Dispatch</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Release Card 3: Cabinet Decision -->
+        <article class="bg-white border border-ink-200 hover:border-dbim-300 rounded-2xl p-5 shadow-xs hover:shadow-md transition-all group">
+          <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 bg-amber-50 text-amber-900 border border-amber-200 px-2.5 py-0.5 rounded-lg text-xs font-semibold">
+                <i class="fa-solid fa-gavel text-amber-700 text-[10px]"></i>
+                Cabinet Decisions
+              </span>
+              <span class="text-ink-400">•</span>
+              <span class="text-xs text-ink-500">Cabinet Secretariat</span>
+            </div>
+            <span class="text-xs font-mono text-ink-500 bg-ink-100 px-1.5 py-0.5 rounded">PRID: 2335665</span>
+          </div>
+
+          <h3 class="text-base sm:text-lg font-bold text-dbim-950 group-hover:text-dbim-700 transition-colors leading-snug mb-2">
+            <a href="press-release-detail-DBIM.html" class="focus:outline-none focus:underline">
+              Cabinet approves Expansion of Semicon India 2.0 with total financial outlay of ₹45,000 Crore for Advanced Packaging &amp; OSAT
+            </a>
+          </h3>
+
+          <p class="text-xs sm:text-[13px] text-ink-600 line-clamp-2 leading-relaxed mb-4">
+            Union Cabinet chaired by Prime Minister Shri Narendra Modi approves comprehensive expansion of semiconductor support architecture to establish 3 new semiconductor fabrication units.
+          </p>
+
+          <div class="flex items-center justify-between flex-wrap gap-3 pt-3 border-t border-ink-100 text-xs">
+            <div class="flex items-center gap-2 text-ink-500">
+              <time class="flex items-center gap-1">
+                <i class="fa-regular fa-clock text-ink-400"></i>
+                12 Nov 2026, 06:30 PM
+              </time>
+              <span>•</span>
+              <span>Also in: All 14 Languages</span>
+            </div>
+
+            <a href="press-release-detail-DBIM.html" class="inline-flex items-center gap-1 font-semibold text-dbim-700 hover:text-dbim-900">
+              <span>Read Full Dispatch</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Release Card 4: Ministry of Agriculture -->
+        <article class="bg-white border border-ink-200 hover:border-dbim-300 rounded-2xl p-5 shadow-xs hover:shadow-md transition-all group">
+          <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-900 border border-emerald-200 px-2.5 py-0.5 rounded-lg text-xs font-semibold">
+                <i class="fa-solid fa-seedling text-emerald-700 text-[10px]"></i>
+                Ministry of Agriculture
+              </span>
+              <span class="text-ink-400">•</span>
+              <span class="text-xs text-ink-500">PIB Delhi</span>
+            </div>
+            <span class="text-xs font-mono text-ink-500 bg-ink-100 px-1.5 py-0.5 rounded">PRID: 2335657</span>
+          </div>
+
+          <h3 class="text-base sm:text-lg font-bold text-dbim-950 group-hover:text-dbim-700 transition-colors leading-snug mb-2">
+            <a href="press-release-detail-DBIM.html" class="focus:outline-none focus:underline">
+              Union Minister Shri Shivraj Singh Chouhan leads Nationwide Agro-Forestry Plantation Campaign on Hariyali Amavasya
+            </a>
+          </h3>
+
+          <p class="text-xs sm:text-[13px] text-ink-600 line-clamp-2 leading-relaxed mb-4">
+            Campaign targets planting over 10 Crore fruit-bearing saplings across rural agrarian communities to double farmer secondary income.
+          </p>
+
+          <div class="flex items-center justify-between flex-wrap gap-3 pt-3 border-t border-ink-100 text-xs">
+            <div class="flex items-center gap-2 text-ink-500">
+              <time class="flex items-center gap-1">
+                <i class="fa-regular fa-clock text-ink-400"></i>
+                12 Nov 2026, 04:15 PM
+              </time>
+              <span>•</span>
+              <span>Also in: हिन्दी</span>
+            </div>
+
+            <a href="press-release-detail-DBIM.html" class="inline-flex items-center gap-1 font-semibold text-dbim-700 hover:text-dbim-900">
+              <span>Read Full Dispatch</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Release Card 5: Ministry of Finance -->
+        <article class="bg-white border border-ink-200 hover:border-dbim-300 rounded-2xl p-5 shadow-xs hover:shadow-md transition-all group">
+          <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 bg-blue-50 text-blue-900 border border-blue-200 px-2.5 py-0.5 rounded-lg text-xs font-semibold">
+                <i class="fa-solid fa-coins text-blue-700 text-[10px]"></i>
+                Ministry of Finance
+              </span>
+              <span class="text-ink-400">•</span>
+              <span class="text-xs text-ink-500">PIB Delhi</span>
+            </div>
+            <span class="text-xs font-mono text-ink-500 bg-ink-100 px-1.5 py-0.5 rounded">PRID: 2335622</span>
+          </div>
+
+          <h3 class="text-base sm:text-lg font-bold text-dbim-950 group-hover:text-dbim-700 transition-colors leading-snug mb-2">
+            <a href="press-release-detail-DBIM.html" class="focus:outline-none focus:underline">
+              Gross Direct Tax Collections register 18.2% growth in H1 FY 2026-27, surpassing ₹11.25 Lakh Crore milestone
+            </a>
+          </h3>
+
+          <p class="text-xs sm:text-[13px] text-ink-600 line-clamp-2 leading-relaxed mb-4">
+            Robust corporate and personal income tax revenues reflect sustained macroeconomic momentum and digital compliance reforms under faceless assessment architecture.
+          </p>
+
+          <div class="flex items-center justify-between flex-wrap gap-3 pt-3 border-t border-ink-100 text-xs">
+            <div class="flex items-center gap-2 text-ink-500">
+              <time class="flex items-center gap-1">
+                <i class="fa-regular fa-clock text-ink-400"></i>
+                12 Nov 2026, 02:20 PM
+              </time>
+              <span>•</span>
+              <span>Also in: हिन्दी, गुजराती</span>
+            </div>
+
+            <a href="press-release-detail-DBIM.html" class="inline-flex items-center gap-1 font-semibold text-dbim-700 hover:text-dbim-900">
+              <span>Read Full Dispatch</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Pagination Controls (Level 2 Navigation) -->
+        <nav aria-label="Press Releases Pagination" class="bg-white border border-ink-200 rounded-2xl p-4 flex items-center justify-between flex-wrap gap-4 text-xs">
+          <div class="text-ink-600">
+            Showing <span class="font-semibold text-ink-900">1–8</span> of <span class="font-semibold text-ink-900">142</span> (Page 1 of 18)
+          </div>
+
+          <div class="flex items-center gap-1">
+            <button class="px-3 py-1.5 rounded-lg border border-ink-200 text-ink-400 cursor-not-allowed" disabled>
+              <i class="fa-solid fa-chevron-left mr-1 text-[10px]"></i> Previous
+            </button>
+            <button class="w-8 h-8 rounded-lg bg-dbim-800 text-white font-bold" aria-current="page">1</button>
+            <button class="w-8 h-8 rounded-lg hover:bg-ink-100 text-ink-700 font-medium">2</button>
+            <button class="w-8 h-8 rounded-lg hover:bg-ink-100 text-ink-700 font-medium">3</button>
+            <span class="px-1 text-ink-400">...</span>
+            <button class="w-8 h-8 rounded-lg hover:bg-ink-100 text-ink-700 font-medium">18</button>
+            <button class="px-3 py-1.5 rounded-lg border border-ink-200 hover:bg-ink-100 text-dbim-800 font-semibold transition-colors">
+              Next <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i>
+            </button>
+          </div>
+        </nav>
+
+      </div>
+
+      <!-- Right Rail Filters & Advisories Sidebar (4 Cols) -->
+      <aside class="lg:col-span-4 space-y-6">
+        
+        <!-- Media Invitations & Press Conferences Today -->
+        <div class="bg-white border border-ink-200 rounded-2xl p-5 shadow-xs">
+          <div class="flex items-center justify-between mb-3.5">
+            <h2 class="text-xs font-bold text-dbim-900 uppercase tracking-wider flex items-center gap-2">
+              <i class="fa-solid fa-bullhorn text-dbim-600"></i>
+              Media Invitations Today
+            </h2>
+            <span class="text-[11px] bg-red-100 text-red-800 font-bold px-2 py-0.5 rounded-full">Live 3</span>
+          </div>
+
+          <div class="space-y-3.5 divide-y divide-ink-100 text-xs">
+            <div class="pt-3 first:pt-0">
+              <span class="text-[11px] font-semibold text-dbim-700">03:30 PM IST · NMC Hall</span>
+              <h3 class="font-bold text-ink-900 leading-snug mt-0.5">
+                Joint Briefing by CEO NITI Aayog &amp; Secretary MeitY on Multilingual AI Roadmap
+              </h3>
+              <p class="text-[11px] text-ink-500 mt-1">Accredited PIB Card holders eligible. Entry via Gate 2.</p>
+            </div>
+
+            <div class="pt-3">
+              <span class="text-[11px] font-semibold text-dbim-700">05:00 PM IST · Rail Bhawan</span>
+              <h3 class="font-bold text-ink-900 leading-snug mt-0.5">
+                Press Conference by Union Minister Ashwini Vaishnaw on Kavach 4.0 Deployment
+              </h3>
+              <p class="text-[11px] text-ink-500 mt-1">Live webcast will be available on PIB YouTube channel.</p>
+            </div>
+          </div>
+
+          <a href="#" class="block text-center mt-4 pt-3 border-t border-ink-100 text-xs font-semibold text-dbim-700 hover:text-dbim-900">
+            View All Media Advisories (AllMediaInvitation.aspx) &rarr;
+          </a>
+        </div>
+
+        <!-- Historical Archive Access (1947–2025) -->
+        <div class="bg-gradient-to-br from-dbim-900 to-dbim-950 text-white rounded-2xl p-5 shadow-md">
+          <div class="flex items-center gap-2 text-xs font-bold text-dbim-200 uppercase tracking-wider mb-2">
+            <i class="fa-solid fa-landmark-dome text-saffron"></i>
+            Historical Press Archives
+          </div>
+          <p class="text-xs text-white/80 leading-relaxed mb-4">
+            Search digitized government press dispatches dating from India's independence in 1947 through 2025.
+          </p>
+          <div class="space-y-2 text-xs font-medium">
+            <a href="https://archive.pib.gov.in" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl bg-white/10 hover:bg-white/20 transition-colors">
+              <span>Historical Releases (1947–2001)</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-white/60"></i>
+            </a>
+            <a href="https://archive.pib.gov.in" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl bg-white/10 hover:bg-white/20 transition-colors">
+              <span>Archived Portal (2004–2017)</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-white/60"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Fact Check Alert Box -->
+        <div class="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-5 shadow-xs">
+          <div class="flex items-center gap-2 text-xs font-bold text-amber-900 uppercase tracking-wider mb-2">
+            <i class="fa-solid fa-shield-halved text-amber-600"></i>
+            PIB Fact Check Unit
+          </div>
+          <p class="text-xs text-ink-700 leading-snug mb-3">
+            Spotted a viral government claim or recruitment notice on WhatsApp or social media? Verify its authenticity directly.
+          </p>
+          <a href="conceptA-DBIM.html#fact-check" class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-amber-700 hover:bg-amber-800 px-3.5 py-2 rounded-xl transition-colors shadow-xs">
+            <i class="fa-solid fa-magnifying-glass text-[11px]"></i>
+            <span>Submit Claim for Fact Check</span>
+          </a>
+        </div>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer id="site-footer" class="border-t border-ink-200 bg-ink-900 text-white mt-16">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-8 py-10">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-ink-800 text-[13px] text-ink-300">
+        <div>
+          <h3 class="font-bold text-white text-sm mb-3">Press Information Bureau</h3>
+          <p class="leading-relaxed text-xs">
+            The nodal agency of the Government of India to disseminate information to print, electronic, and digital media on government policies and achievements.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-bold text-white text-sm mb-3">Releases &amp; Media</h3>
+          <ul class="space-y-2 text-xs">
+            <li><a href="press-releases-menu-DBIM.html" class="hover:text-white transition-colors">All Press Releases</a></li>
+            <li><a href="press-release-detail-DBIM.html" class="hover:text-white transition-colors">Featured Release Detail</a></li>
+            <li><a href="conceptA-DBIM.html#media-gallery" class="hover:text-white transition-colors">High-Res Photos &amp; Webcasts</a></li>
+            <li><a href="conceptA-DBIM.html#fact-check" class="hover:text-white transition-colors">PIB Fact Check Unit</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-white text-sm mb-3">Governance &amp; RTI</h3>
+          <ul class="space-y-2 text-xs">
+            <li><a href="conceptA-DBIM.html#department" class="hover:text-white transition-colors">About PIB Leadership</a></li>
+            <li><a href="conceptA-DBIM.html#personas" class="hover:text-white transition-colors">Regional Branch Offices</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">RTI Disclosure &amp; CPIOs</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Citizen's Charter</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-white text-sm mb-3">Official Links</h3>
+          <ul class="space-y-2 text-xs">
+            <li><a href="https://india.gov.in" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">National Portal of India</a></li>
+            <li><a href="https://pmindia.gov.in" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Prime Minister's Office</a></li>
+            <li><a href="https://mib.gov.in" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Ministry of I&amp;B</a></li>
+            <li><a href="https://factcheck.pib.gov.in" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Fact Check Portal</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-6 flex items-center justify-between flex-wrap gap-4 text-xs text-ink-400">
+        <div>
+          © 2026 Press Information Bureau, Government of India. Designed strictly to DBIM 3.0 &amp; GIGW 3.0 Standards.
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-white transition-colors">Website Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Accessibility Statement</a>
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Contact Webmaster</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // Live Search Filter
+    const searchInput = document.getElementById('filter-search');
+    const articles = document.querySelectorAll('article');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const val = e.target.value.toLowerCase().trim();
+        articles.forEach(article => {
+          const text = article.innerText.toLowerCase();
+          article.style.display = text.includes(val) ? 'block' : 'none';
+        });
+      });
+    }
+
+    // Reset Filters
+    const resetBtn = document.getElementById('btn-reset-filters');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        document.getElementById('filter-ministry').value = 'all';
+        document.getElementById('filter-region').value = 'all';
+        document.getElementById('filter-date').value = 'today';
+        articles.forEach(a => a.style.display = 'block');
+      });
+    }
+
+    // High Contrast Toggle
+    const contrastBtn = document.getElementById('btn-contrast-toggle');
+    if (contrastBtn) {
+      contrastBtn.addEventListener('click', () => {
+        document.body.classList.toggle('high-contrast');
+        const isContrast = document.body.classList.contains('high-contrast');
+        contrastBtn.setAttribute('aria-pressed', isContrast);
+      });
+    }
+  </script>
+
+</body>
+</html>
+
