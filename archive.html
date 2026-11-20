@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | PIB Archives</title>
+  <meta name="description" content="Press Information Bureau (PIB) Archives, which contains old press releases, photos, and other documents issued by the Government of India from 1947 onwards.">
+  <meta name="keywords" content="PIB archive, Press Information Bureau, government press releases, PIB press releases, official communications, Indian government updates, policy announcements, PIB India, archived press releases, government news">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome 6.5.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Google Fonts: Noto Sans & Noto Sans Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans"', '"Noto Sans Devanagari"', 'system-ui', '-apple-system', 'sans-serif'],
+            devanagari: ['"Noto Sans Devanagari"', '"Noto Sans"', 'sans-serif']
+          },
+          colors: {
+            gov: {
+              teal: '#207169',
+              tealDark: '#17554f',
+              tealLight: '#f0f7f6',
+              navy: '#102552',
+              navyDark: '#0B1A38',
+              saffron: '#f99426'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Base typography */
+    html { font-size: 16px; }
+    body { font-family: 'Noto Sans', 'Noto Sans Devanagari', sans-serif; }
+
+    /* Accessible Text Resizing */
+    body.text-zoom-sm { font-size: 14px; }
+    body.text-zoom-md { font-size: 16px; }
+    body.text-zoom-lg { font-size: 18px; }
+
+    /* High Contrast Mode */
+    body.high-contrast {
+      background-color: #000000 !important;
+      color: #FFFFFF !important;
+    }
+    body.high-contrast * {
+      background-color: transparent !important;
+      color: #FFFFFF !important;
+      border-color: #666666 !important;
+      box-shadow: none !important;
+    }
+    body.high-contrast header,
+    body.high-contrast nav,
+    body.high-contrast main,
+    body.high-contrast footer,
+    body.high-contrast .archive-btn,
+    body.high-contrast .era-card {
+      background-color: #121212 !important;
+      color: #FFFFFF !important;
+      border: 1px solid #FFFFFF !important;
+    }
+    body.high-contrast a {
+      color: #FFFF00 !important;
+      text-decoration: underline !important;
+    }
+    body.high-contrast button {
+      border: 2px solid #FFFF00 !important;
+      color: #FFFF00 !important;
+      background-color: #000000 !important;
+    }
+    body.high-contrast input {
+      border: 2px solid #FFFF00 !important;
+      color: #FFFFFF !important;
+      background-color: #121212 !important;
+    }
+
+    /* Accessibility Focus Visible */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 2px solid #102552 !important;
+      outline-offset: 2px !important;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 antialiased min-h-screen flex flex-col">
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-nav" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-slate-950 focus:text-white focus:rounded focus:shadow-lg focus:font-semibold text-xs">
+    Skip to main content
+  </a>
+
+  <!-- ========================================================================= -->
+  <!-- 1. ACCESSIBILITY & UTILITY TOP BAR                                        -->
+  <!-- ========================================================================= -->
+  <div class="bg-gov-teal text-white text-xs">
+    <div class="max-w-6xl mx-auto px-4 h-9 flex items-center justify-between">
+      
+      <!-- Left: National Identity -->
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-3 rounded-[1px] shadow-xs flex-shrink-0" viewBox="0 0 450 300" aria-hidden="true">
+          <rect width="450" height="100" fill="#FF9933"/>
+          <rect y="100" width="450" height="100" fill="#FFFFFF"/>
+          <rect y="200" width="450" height="100" fill="#138808"/>
+          <circle cx="225" cy="150" r="40" fill="#000080"/>
+          <circle cx="225" cy="150" r="35" fill="#FFFFFF"/>
+          <circle cx="225" cy="150" r="8" fill="#000080"/>
+        </svg>
+        <span lang="hi">भारत सरकार</span>
+        <span class="text-white/40">|</span>
+        <span>Government of India</span>
+      </div>
+
+      <!-- Right: Accessibility Controls & User Guide -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        
+        <!-- Text Resizer -->
+        <div class="flex items-center gap-1" role="group" aria-label="Font Size Controls">
+          <button id="decrease-font" type="button" class="px-1.5 py-0.5 rounded hover:bg-white/10 text-white text-[11px] font-medium" title="Reduce font size" aria-label="Reduce font size">A-</button>
+          <button id="reset-font" type="button" class="px-1.5 py-0.5 rounded bg-white/20 text-white text-[11px] font-bold" title="Normal font size" aria-label="Normal font size">A</button>
+          <button id="increase-font" type="button" class="px-1.5 py-0.5 rounded hover:bg-white/10 text-white text-[11px] font-medium" title="Increase font size" aria-label="Increase font size">A+</button>
+        </div>
+
+        <span class="text-white/30 hidden sm:inline">|</span>
+
+        <!-- High Contrast Mode Toggle -->
+        <button id="toggle-contrast" type="button" class="flex items-center gap-1 text-[11px] hover:text-amber-200 transition-colors" aria-pressed="false" title="Toggle High Contrast Mode">
+          <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+          <span class="hidden sm:inline">Contrast</span>
+        </button>
+
+        <span class="text-white/30 hidden sm:inline">|</span>
+
+        <!-- Help Guide Link (Original archive2/archivesearchguide.aspx) -->
+        <a href="https://archive.pib.gov.in/archive2/archivesearchguide.aspx" class="flex items-center gap-1 hover:text-amber-200 transition-colors text-[11px]" title="Help Document - Archive Search Guide">
+          <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
+          <span>Help</span>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 2. MAIN HEADER (EMBLEM, IDENTITY & OFFICIAL CHANNELS)                     -->
+  <!-- ========================================================================= -->
+  <header role="banner" class="bg-white border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      
+      <!-- National Emblem & Press Information Bureau Lockup -->
+      <div class="flex items-center gap-3.5">
+        <img src="PIB Delhi, Press Information Bureau_files/emblem-of-india_-0eu.png" 
+             alt="Indian Emblem" 
+             class="h-14 w-auto object-contain flex-shrink-0"
+             onerror="this.onerror=null; this.src='https://archive.pib.gov.in/archive2/images/indian-emblem.png'">
+        
+        <div class="leading-tight">
+          <div class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+            Press Information Bureau
+          </div>
+          <div class="text-sm font-semibold text-slate-700 font-devanagari">
+            पत्र सूचना कार्यालय
+          </div>
+          <div class="text-xs text-slate-500 uppercase tracking-wide">
+            Government of India
+          </div>
+        </div>
+      </div>
+
+      <!-- Header Right: Social Channels & Advance Search CTA -->
+      <div class="flex items-center flex-wrap gap-3">
+        
+        <!-- Social Icons (Original list: Home, X/Twitter, Facebook, YouTube, Instagram, Blog) -->
+        <ul class="flex items-center gap-1.5" aria-label="Official Social Channels">
+          <li>
+            <a href="conceptA-DBIM.html" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-700 hover:text-gov-teal hover:border-gov-teal transition-colors" title="Home" aria-label="Home">
+              <i class="fa-solid fa-house text-xs"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/pib_india" target="_blank" rel="noopener noreferrer" onclick="return confirm('You are being redirected to an external website. Please note that PIB is not responsible for external websites content & privacy policies.');" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-[#55ACEE] hover:bg-slate-50 transition-colors" title="Follow us on Twitter" aria-label="Follow us on Twitter">
+              <i class="fa-brands fa-x-twitter text-xs"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/pibindia" target="_blank" rel="noopener noreferrer" onclick="return confirm('You are being redirected to an external website. Please note that PIB is not responsible for external websites content & privacy policies.');" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-[#3B5998] hover:bg-slate-50 transition-colors" title="Like us on Facebook" aria-label="Follow us on Facebook">
+              <i class="fa-brands fa-facebook-f text-xs"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/user/pibindia" target="_blank" rel="noopener noreferrer" onclick="return confirm('You are being redirected to an external website. Please note that PIB is not responsible for external websites content & privacy policies.');" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-[#ff0000] hover:bg-slate-50 transition-colors" title="Our YouTube Channel" aria-label="Follow us on YouTube">
+              <i class="fa-brands fa-youtube text-xs"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/pibindia" target="_blank" rel="noopener noreferrer" onclick="return confirm('You are being redirected to an external website. Please note that PIB is not responsible for external websites content & privacy policies.');" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-[#3F729B] hover:bg-slate-50 transition-colors" title="Follow us on Instagram" aria-label="Follow us on Instagram">
+              <i class="fa-brands fa-instagram text-xs"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://pibindia.wordpress.com/" target="_blank" rel="noopener noreferrer" onclick="return confirm('You are being redirected to an external website. Please note that PIB is not responsible for external websites content & privacy policies.');" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-[#21759b] hover:bg-slate-50 transition-colors" title="Our Blog" aria-label="PIB Wordpress Blog">
+              <i class="fa-brands fa-wordpress-simple text-xs"></i>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Advance Search 2003 Onwards (Original primary feature) -->
+        <a href="https://archive.pib.gov.in/archive2/AdvSearch.aspx" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-gov-teal hover:bg-gov-tealDark text-white text-xs font-semibold shadow-xs transition-colors">
+          <i class="fa-solid fa-magnifying-glass text-[11px]" aria-hidden="true"></i>
+          <span>Advance Search 2003 Onwards</span>
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- Official Saffron Border Line (Preserving original border-bottom: 25px solid #f99426 with modern thin accent) -->
+    <div class="h-1.5 w-full bg-[#f99426]" aria-hidden="true"></div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 3. MAIN CONTENT: ARCHIVE DIRECTORY                                        -->
+  <!-- ========================================================================= -->
+  <main id="main-nav" role="main" class="flex-1 max-w-6xl w-full mx-auto px-4 py-8">
+    
+    <!-- Title Area (Original Authentic Content: "PIB Archives" and Meta Description) -->
+    <div class="mb-8 border-b border-slate-200 pb-6">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+            PIB Archives
+          </h1>
+          <p class="text-sm font-medium text-slate-600 font-devanagari mt-0.5">
+            पत्र सूचना कार्यालय अभिलेखागार
+          </p>
+          <p class="text-xs sm:text-sm text-slate-500 mt-2 max-w-3xl leading-relaxed">
+            Press Information Bureau (PIB) Archives contains old press releases, photos, and other documents issued by the Government of India from 1947 onwards.
+          </p>
+        </div>
+
+        <!-- Quick Filter Input for High Usability -->
+        <search class="w-full sm:w-72">
+          <div class="relative">
+            <i class="fa-solid fa-filter text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 text-xs" aria-hidden="true"></i>
+            <label for="filter-input" class="sr-only">Filter archive categories</label>
+            <input id="filter-input" 
+                   type="search" 
+                   placeholder="Filter archives..." 
+                   class="w-full pl-8 pr-7 py-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-gov-teal focus:ring-1 focus:ring-gov-teal transition-all"
+                   autocomplete="off">
+            <button id="clear-filter" type="button" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600" aria-label="Clear filter">
+              <i class="fa-solid fa-xmark text-xs"></i>
+            </button>
+          </div>
+        </search>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- SECTION 1: 1947-2001 & 2002-2003 (HISTORICAL ERAS)                     -->
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10" id="historical-eras">
+      
+      <!-- 1947-2001 -->
+      <a href="https://archive.pib.gov.in/archive/phase2/archiveministry.aspx?phase=3" class="era-card group p-5 bg-white border border-slate-200 hover:border-gov-teal rounded-xl shadow-xs hover:shadow-md transition-all flex items-center justify-between" data-search="1947 2001 archive phase 2 ministry historical">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-lg bg-gov-tealLight text-gov-teal flex items-center justify-center text-lg font-bold group-hover:bg-gov-teal group-hover:text-white transition-colors">
+            <i class="fa-solid fa-landmark"></i>
+          </div>
+          <div>
+            <div class="text-base font-bold text-slate-900 group-hover:text-gov-teal transition-colors">
+              1947-2001
+            </div>
+            <div class="text-xs text-slate-500 mt-0.5">
+              Press releases &amp; documents (1947 to 2001)
+            </div>
+          </div>
+        </div>
+        <div class="w-8 h-8 rounded-full bg-slate-50 text-slate-400 group-hover:text-gov-teal group-hover:bg-gov-tealLight flex items-center justify-center transition-colors">
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+        </div>
+      </a>
+
+      <!-- 2002-2003 -->
+      <a href="https://archive.pib.gov.in/newsite/archivepage.aspx" class="era-card group p-5 bg-white border border-slate-200 hover:border-gov-teal rounded-xl shadow-xs hover:shadow-md transition-all flex items-center justify-between" data-search="2002 2003 newsite archive page electronic">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-lg bg-gov-tealLight text-gov-teal flex items-center justify-center text-lg font-bold group-hover:bg-gov-teal group-hover:text-white transition-colors">
+            <i class="fa-solid fa-box-archive"></i>
+          </div>
+          <div>
+            <div class="text-base font-bold text-slate-900 group-hover:text-gov-teal transition-colors">
+              2002-2003
+            </div>
+            <div class="text-xs text-slate-500 mt-0.5">
+              Digital archive releases (2002 to 2003)
+            </div>
+          </div>
+        </div>
+        <div class="w-8 h-8 rounded-full bg-slate-50 text-slate-400 group-hover:text-gov-teal group-hover:bg-gov-tealLight flex items-center justify-center transition-colors">
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- SECTION 2: 2004 ONWARDS (ALL ORIGINAL 21 CATEGORIES)                    -->
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="mb-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-gov-teal"></span>
+        <h2 class="text-lg font-bold text-slate-900 tracking-tight">
+          2004 Onwards
+        </h2>
+      </div>
+      <span class="text-xs text-slate-500" id="item-counter">21 Categories</span>
+    </div>
+
+    <!-- Categorized Grid of Original Links -->
+    <div class="space-y-6" id="categories-container">
+      
+      <!-- Group A: Press Releases (विज्ञप्तियां) -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5">
+          Press Releases &amp; PM Statements
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          
+          <!-- English Releases -->
+          <a href="https://archive.pib.gov.in/archive2/erelease.aspx" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="English Releases">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-newspaper text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 group-hover:text-gov-teal">English Releases</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+          <!-- हिंदी विज्ञप्तियां -->
+          <a href="https://archive.pib.gov.in/archive2/hindirelease.aspx" lang="hi" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="हिंदी विज्ञप्तियां Hindi Releases">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-language text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 font-devanagari group-hover:text-gov-teal">हिंदी विज्ञप्तियां</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+          <!-- Urdu Releases -->
+          <a href="https://archive.pib.gov.in/archive2/UrduRelease.aspx" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="Urdu Releases">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-book text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 group-hover:text-gov-teal">Urdu Releases</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+          <!-- Regional Releases -->
+          <a href="https://archive.pib.gov.in/archive2/regional_PM_Releases.aspx" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="Regional Releases">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-map-location text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 group-hover:text-gov-teal">Regional Releases</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+          <!-- English Releases (PM) -->
+          <a href="https://archive.pib.gov.in/archive2/pmreleases.aspx?mincode=3" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="English Releases (PM) Prime Minister">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-user-tie text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 group-hover:text-gov-teal">English Releases (PM)</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+          <!-- विज्ञप्तियां (प्रधान मंत्री) -->
+          <a href="https://archive.pib.gov.in/archive2/pmhindirelease.aspx?mincode=3" lang="hi" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="विज्ञप्तियां (प्रधान मंत्री) Hindi PM Releases">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-user text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 font-devanagari group-hover:text-gov-teal">विज्ञप्तियां (प्रधान मंत्री)</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Group B: Cabinet & Policy Decisions (मंत्रिमंडल निर्णय) -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5">
+          Cabinet &amp; Economic Decisions
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          
+          <!-- Cabinet Decisions -->
+          <a href="https://archive.pib.gov.in/archive2/pmreleases.aspx?mincode=61" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="Cabinet Decisions">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-landmark text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 group-hover:text-gov-teal">Cabinet Decisions</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+          <!-- CCEA Decisions -->
+          <a href="https://archive.pib.gov.in/archive2/pmreleases.aspx?mincode=63" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="CCEA Decisions Economic Affairs">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-chart-line text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 group-hover:text-gov-teal">CCEA Decisions</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+          <!-- मंत्रिमंडल -->
+          <a href="https://archive.pib.gov.in/archive2/pmhindirelease.aspx?mincode=61" lang="hi" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="मंत्रिमंडल Hindi Cabinet Decisions">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-scale-balanced text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 font-devanagari group-hover:text-gov-teal">मंत्रिमंडल</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+          <!-- आर्थिक मामलों पर मंत्रिमंडलीय समिति (सीसीईए) -->
+          <a href="https://archive.pib.gov.in/archive2/pmhindirelease.aspx?mincode=63" lang="hi" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="आर्थिक मामलों पर मंत्रिमंडलीय समिति (सीसीईए) CCEA Hindi">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-coins text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 font-devanagari group-hover:text-gov-teal">आर्थिक मामलों पर मंत्रिमंडलीय समिति (सीसीईए)</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Group C: Photos & Multimedia (छायाचित्र व वेबकास्ट) -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5">
+          Photos &amp; Multimedia
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          
+          <!-- Photos -->
+          <a href="https://archive.pib.gov.in/archive2/photo.aspx" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="Photos">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-camera text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 group-hover:text-gov-teal">Photos</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+          <!-- PM Photos -->
+          <a href="https://archive.pib.gov.in/archive2/pmphoto.aspx?mincode=3" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="PM Photos Prime Minister">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-images text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 group-hover:text-gov-teal">PM Photos</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+          <!-- Regional Photos -->
+          <a href="https://archive.pib.gov.in/archive2/regional_lang_photo1.aspx" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="Regional Photos">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-image text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 group-hover:text-gov-teal">Regional Photos</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+          <!-- Webcast -->
+          <a href="https://archive.pib.gov.in/archive2/webcastMores.aspx" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="Webcast">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-video text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 group-hover:text-gov-teal">Webcast</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Group D: Features & Factsheets (लेख व संदर्भ सामग्री) -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5">
+          Features &amp; Backgrounders
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          
+          <!-- Features -->
+          <a href="https://archive.pib.gov.in/archive2/efeatures.aspx" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="Features">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-pen-nib text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 group-hover:text-gov-teal">Features</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+          <!-- लेख -->
+          <a href="https://archive.pib.gov.in/archive2/hindifeature.aspx" lang="hi" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="लेख Hindi Features Articles">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-file-lines text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 font-devanagari group-hover:text-gov-teal">लेख</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+          <!-- Backgrounders/Factsheets -->
+          <a href="https://archive.pib.gov.in/archive2/backgrounders.aspx?relid=0" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="Backgrounders/Factsheets">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-folder-open text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 group-hover:text-gov-teal">Backgrounders/Factsheets</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+          <!-- संदर्भ सामग्री/तथ्य सामग्री -->
+          <a href="https://archive.pib.gov.in/archive2/hindibackgrounder.aspx?relid=0" lang="hi" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="संदर्भ सामग्री/तथ्य सामग्री Hindi Backgrounders Factsheets">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-circle-info text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 font-devanagari group-hover:text-gov-teal">संदर्भ सामग्री/तथ्य सामग्री</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Group E: Other Official Documents (अन्य सामग्री) -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5">
+          Other Documents &amp; Media
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          
+          <!-- PM Visits Abroad -->
+          <a href="https://archive.pib.gov.in/archive2/pmvisitabrod.aspx" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="PM Visits Abroad">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-plane-departure text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 group-hover:text-gov-teal">PM Visits Abroad</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+          <!-- Micro-sites -->
+          <a href="https://archive.pib.gov.in/archive2/otherdocument.aspx" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="Micro-sites Other Document">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-globe text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 group-hover:text-gov-teal">Micro-sites</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+          <!-- Invitations -->
+          <a href="https://archive.pib.gov.in/archive2/invitation.aspx" class="archive-btn p-3.5 bg-white border border-slate-200 hover:border-gov-teal hover:bg-slate-50/80 rounded-lg shadow-2xs transition-all flex items-center justify-between group" data-title="Invitations">
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-envelope text-gov-teal text-sm"></i>
+              <span class="text-xs font-semibold text-slate-800 group-hover:text-gov-teal">Invitations</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 group-hover:text-gov-teal transition-all"></i>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Empty state for search filter -->
+    <div id="no-match" class="hidden text-center py-12">
+      <p class="text-sm text-slate-500">No matching archive category found.</p>
+      <button id="reset-filter-btn" type="button" class="mt-2 text-xs font-semibold text-gov-teal hover:underline">
+        Reset filter
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- 4. OFFICIAL FOOTER (EXACT ORIGINAL RTI, CONTACT & GOI CONTENT)             -->
+  <!-- ========================================================================= -->
+  <footer role="contentinfo" class="bg-gov-tealDark text-white mt-auto text-xs">
+    
+    <!-- Web Information Manager link bar (Original style) -->
+    <div class="bg-slate-200 text-slate-800 py-2 text-center border-t border-slate-300">
+      <a href="https://www.pib.gov.in/content/3709_5_pib.nic.in.aspx?reg=3&amp;lang=1" class="font-medium hover:underline text-slate-900">
+        Web Information Manager
+      </a>
+    </div>
+
+    <!-- Tier 1: RTI, Contact Us & GOI Links (Exact links preserved from original site) -->
+    <div class="max-w-6xl mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        
+        <!-- RTI and Contact Us (2 Columns in original) -->
+        <div class="md:col-span-8">
+          <h2 class="text-sm font-bold text-white mb-3 pb-1 border-b border-white/20">
+            RTI and Contact Us
+          </h2>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 text-white/80 text-[11.5px]">
+            <li><a href="https://pib.gov.in/content/3663_5_pib.gov.in.aspx?reg=3&amp;lang=1" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">WHO’S WHO AT PIB</a></li>
+            <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/oct/doc_10117_20261006_20115201.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Work Allocation</a></li>
+            <li><a href="https://pib.gov.in/content/3664_5_pib.gov.in.aspx?reg=3&amp;lang=1" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Telephone Number of Regional Branch Offices of PIB</a></li>
+            <li><a href="https://www.pib.gov.in/content/3709_5_pib.nic.in.aspx?reg=3&amp;lang=1" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Web Information Manager</a></li>
+            <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202552549601.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Public Grievance Officer</a></li>
+            <li><a href="https://pib.gov.in/content/3714_5_Pib.gov.in.aspx?reg=3&amp;lang=1" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Telephone Nos of PIB Officers of Hqrs</a></li>
+            <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/apr/doc2026420851701.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">CPIOs Appellate Authority List</a></li>
+            <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/may/doc2026525875801.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">RTI Transparency Audit Compliance</a></li>
+            <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/apr/doc2024416331001.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Information Manual</a></li>
+            <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/apr/doc2025417541601.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Delegation of financial powers</a></li>
+            <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/may/doc2026525875901.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Citizen Charter</a></li>
+            <li><a href="https://www.davp.nic.in/writereaddata/announce/Adv165810112023.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Link for RFP uploaded on CBC website for Printing Publishing PIB handbook General Elections 2024</a></li>
+            <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/may/doc2026525876001.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Transparency Audit</a></li>
+            <li><a href="https://pgportal.gov.in/" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Portal for Public Grievance Submission</a></li>
+            <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/may/doc2026525875401.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Allocation Budget</a></li>
+            <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc2025529559801.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Amendment of RRs for Group C Posts</a></li>
+            <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/may/doc202655863801.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Internal Complaints Committee</a></li>
+            <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/apr/doc202445328601.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Amendment of RRs for Group A and Group B posts</a></li>
+            <li><a href="https://pib.gov.in/content/3705_5_pib.nic.in.aspx?reg=3&amp;lang=1" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Liaison Officer</a></li>
+            <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/dec/doc20241220475101.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Transfer Policy for CG-II &amp; MTS of PIB Regional, Branch Offices</a></li>
+          </ul>
+          <div class="mt-2.5">
+            <a href="https://pib.gov.in/content/24_5_more.aspx?reg=3&amp;lang=1" target="_blank" rel="noopener noreferrer" class="text-white font-bold hover:underline" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">More</a>
+          </div>
+        </div>
+
+        <!-- GOI Links (Exact links from original site) -->
+        <div class="md:col-span-4">
+          <h2 class="text-sm font-bold text-white mb-3 pb-1 border-b border-white/20">
+            GOI Links
+          </h2>
+          <ul class="space-y-1.5 text-white/80 text-[11.5px]">
+            <li><a href="https://mib.gov.in/" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Ministry of Information and Broadcasting</a></li>
+            <li><a href="https://agriwelfare.gov.in/" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Ministry of Agriculture &amp; Farmers Welfare</a></li>
+            <li><a href="https://www.texmin.gov.in/" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Ministry of Textiles</a></li>
+            <li><a href="https://commerce.gov.in/" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Ministry of Commerce &amp; Industry</a></li>
+            <li><a href="https://mod.gov.in/" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Ministry of Defence</a></li>
+            <li><a href="https://dea.gov.in/" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Ministry of Finance</a></li>
+            <li><a href="https://www.mohfw.gov.in/" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Ministry of Health and Family Welfare</a></li>
+            <li><a href="https://mha.gov.in/" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Ministry of Home Affairs</a></li>
+            <li><a href="https://mohua.gov.in/" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Ministry of Housing and Urban Affairs</a></li>
+            <li><a href="https://www.education.gov.in/" target="_blank" rel="noopener noreferrer" class="hover:text-white" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">Ministry of Education</a></li>
+          </ul>
+          <div class="mt-2.5">
+            <a href="https://pib.gov.in/content/25_5_more.aspx?reg=3&amp;lang=1" target="_blank" rel="noopener noreferrer" class="text-white font-bold hover:underline" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">More</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Tier 2: STQC Badge, Policies & Hosting Attribution (Original footer style) -->
+    <div class="bg-[#4d4b4b] text-slate-200 py-6 border-t border-slate-600">
+      <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <!-- STQC Badge -->
+        <a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/feb/doc2025217503801.pdf" target="_blank" rel="noopener noreferrer" class="flex-shrink-0" title="STQC Certificate">
+          <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2025/feb/ph2025217503601.png" 
+               alt="STQC CQW Certified Quality Website badge" 
+               class="max-h-16 w-auto object-contain">
+        </a>
+
+        <!-- Standard Website Policy Links & Address -->
+        <div class="text-center flex-1">
+          <ul class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-white text-[11.5px] mb-3">
+            <li><a href="https://pib.gov.in/Aboutarchive.aspx" target="_blank" rel="noopener noreferrer" class="hover:underline">About us</a></li>
+            <li aria-hidden="true" class="text-slate-400">|</li>
+            <li><a href="https://www.india.gov.in/" target="_blank" rel="noopener noreferrer" class="hover:underline" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');">National Portal of India</a></li>
+            <li aria-hidden="true" class="text-slate-400">|</li>
+            <li><a href="https://pib.gov.in/content/105_2_Help.aspx?reg=3&amp;lang=1" target="_blank" rel="noopener noreferrer" class="hover:underline">Help</a></li>
+            <li aria-hidden="true" class="text-slate-400">|</li>
+            <li><a href="https://factcheck.pib.gov.in/feedbacklogin.aspx" target="_blank" rel="noopener noreferrer" class="hover:underline">Feedback</a></li>
+            <li aria-hidden="true" class="text-slate-400">|</li>
+            <li><a href="https://pib.gov.in/content/3714_5_Pib.gov.in.aspx?reg=3&amp;lang=1" target="_blank" rel="noopener noreferrer" class="hover:underline">Contact Us</a></li>
+            <li aria-hidden="true" class="text-slate-400">|</li>
+            <li><a href="https://archive.pib.gov.in/archive2/sitemap.aspx" class="hover:underline">Sitemap</a></li>
+            <li aria-hidden="true" class="text-slate-400">|</li>
+            <li><a href="https://pib.gov.in/content/103_2_Privacy-Policy.aspx?reg=3&amp;lang=1" target="_blank" rel="noopener noreferrer" class="hover:underline">Privacy Policy</a></li>
+            <li aria-hidden="true" class="text-slate-400">|</li>
+            <li><a href="https://pib.gov.in/content/104_2_Hyperlinking-Policy.aspx?reg=3&amp;lang=1" target="_blank" rel="noopener noreferrer" class="hover:underline">Hyperlinking Policy</a></li>
+            <li aria-hidden="true" class="text-slate-400">|</li>
+            <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/sep/doc_9837_20260910_10154701.pdf" target="_blank" rel="noopener noreferrer" class="hover:underline">Accessibility Conformance Report</a></li>
+          </ul>
+
+          <div class="text-[11px] text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Site is designed and hosted by National Informatics Centre (NIC), Information is provided and updated by Press Information Bureau, "A" - Wing, Shastri Bhawan, Dr. Rajendra Prasad Road, New Delhi - 110 001 Phone 23389338
+          </div>
+        </div>
+
+        <!-- Last Updated Metadata -->
+        <div class="text-center md:text-right text-[11px] text-slate-300 flex-shrink-0">
+          <p><b>Last Updated On:</b><br>10 Oct 2026 13:12:20 PM</p>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- 5. CLIENT-SIDE SCRIPTS (FONT RESIZE, CONTRAST & INSTANT FILTER)           -->
+  <!-- ========================================================================= -->
+  <script>
+    // Font resizing
+    const btnDec = document.getElementById('decrease-font');
+    const btnDef = document.getElementById('reset-font');
+    const btnInc = document.getElementById('increase-font');
+
+    function applyZoom(zoom) {
+      document.body.classList.remove('text-zoom-sm', 'text-zoom-md', 'text-zoom-lg');
+      btnDec.classList.remove('bg-white/30', 'font-bold');
+      btnDef.classList.remove('bg-white/30', 'font-bold');
+      btnInc.classList.remove('bg-white/30', 'font-bold');
+
+      if (zoom === 'sm') {
+        document.body.classList.add('text-zoom-sm');
+        btnDec.classList.add('bg-white/30', 'font-bold');
+      } else if (zoom === 'lg') {
+        document.body.classList.add('text-zoom-lg');
+        btnInc.classList.add('bg-white/30', 'font-bold');
+      } else {
+        document.body.classList.add('text-zoom-md');
+        btnDef.classList.add('bg-white/30', 'font-bold');
+      }
+      localStorage.setItem('pib-zoom', zoom);
+    }
+
+    btnDec.addEventListener('click', () => applyZoom('sm'));
+    btnDef.addEventListener('click', () => applyZoom('md'));
+    btnInc.addEventListener('click', () => applyZoom('lg'));
+    const savedZoom = localStorage.getItem('pib-zoom');
+    if (savedZoom) applyZoom(savedZoom);
+
+    // High Contrast toggle
+    const btnContrast = document.getElementById('toggle-contrast');
+    function applyContrast(enable) {
+      if (enable) {
+        document.body.classList.add('high-contrast');
+        btnContrast.setAttribute('aria-pressed', 'true');
+      } else {
+        document.body.classList.remove('high-contrast');
+        btnContrast.setAttribute('aria-pressed', 'false');
+      }
+      localStorage.setItem('pib-contrast', enable ? '1' : '0');
+    }
+
+    btnContrast.addEventListener('click', () => {
+      const isHigh = document.body.classList.contains('high-contrast');
+      applyContrast(!isHigh);
+    });
+    if (localStorage.getItem('pib-contrast') === '1') applyContrast(true);
+
+    // Instant Search Filter
+    const filterInput = document.getElementById('filter-input');
+    const clearFilterBtn = document.getElementById('clear-filter');
+    const resetFilterBtn = document.getElementById('reset-filter-btn');
+    const archiveButtons = document.querySelectorAll('.archive-btn');
+    const eraCards = document.querySelectorAll('.era-card');
+    const noMatch = document.getElementById('no-match');
+    const itemCounter = document.getElementById('item-counter');
+
+    function filterItems() {
+      const val = filterInput.value.trim().toLowerCase();
+      
+      if (val.length > 0) {
+        clearFilterBtn.classList.remove('hidden');
+      } else {
+        clearFilterBtn.classList.add('hidden');
+      }
+
+      let visibleCount = 0;
+
+      archiveButtons.forEach(btn => {
+        const title = (btn.getAttribute('data-title') || btn.innerText).toLowerCase();
+        if (val === '' || title.includes(val)) {
+          btn.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          btn.classList.add('hidden');
+        }
+      });
+
+      eraCards.forEach(card => {
+        const text = (card.getAttribute('data-search') + ' ' + card.innerText).toLowerCase();
+        if (val === '' || text.includes(val)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      itemCounter.textContent = `${visibleCount} of 21 Categories`;
+
+      if (visibleCount === 0) {
+        noMatch.classList.remove('hidden');
+      } else {
+        noMatch.classList.add('hidden');
+      }
+    }
+
+    filterInput.addEventListener('input', filterItems);
+
+    clearFilterBtn.addEventListener('click', () => {
+      filterInput.value = '';
+      filterItems();
+      filterInput.focus();
+    });
+
+    resetFilterBtn.addEventListener('click', () => {
+      filterInput.value = '';
+      filterItems();
+      filterInput.focus();
+    });
+  </script>
+
+</body>
+</html>
